@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - Pinky Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Pinky Fashion Store</h1>
+    <div class="menu-top">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang Kami</a>
+        <a href="keranjang.html">Keranjang</a>
+        <a href="kontak.html">Kontak</a>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="images/banner-general.jpg" alt="Banner">
+</section>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>Kategori</h3>
+        <ul>
+            <li><a href="index.html">Produk Terbaru</a></li>
+            <li><a href="pria.html">Fashion Pria</a></li>
+            <li><a href="wanita.html">Fashion Wanita</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <h2>Checkout</h2>
+        
+        <div class="checkout-container">
+            <div class="checkout-section">
+                <h3>Ringkasan Pesanan</h3>
+                <div id="order-summary"></div>
+            </div>
+
+            <div class="checkout-section">
+                <h3>Metode Pembayaran</h3>
+                <div class="payment-methods">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="transfer" checked>
+                        <span>Transfer Bank</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cod">
+                        <span>Cash on Delivery (COD)</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="ewallet">
+                        <span>E-Wallet (GoPay, OVO, Dana)</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="credit">
+                        <span>Kartu Kredit/Debit</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="checkout-total">
+                <h3>Total Pembayaran: <span id="checkout-total">Rp 0</span></h3>
+                <div class="checkout-buttons">
+                    <button class="checkout-btn" onclick="processCheckout()">Bayar Sekarang</button>
+                    <button class="back-btn" onclick="window.location.href='index.html'">Kembali ke Beranda</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
+</footer>
+
+<script>
+    function loadOrderSummary() {
+        var cartQty = [1, 1, 1, 1];
+        var cartPrice = [249000, 299000, 135000, 219000];
+        var cartItems = ["Tropical Summer Dress", "Luna Ribbed Knit Set", "Chic Vacation Blouse", "Cardinal Kemeja Lengan Panjang Slim Fit"];
+        
+        var summaryContainer = document.getElementById('order-summary');
+        var total = 0;
+        
+        summaryContainer.innerHTML = '<div class="order-items">';
+        
+        for(var i = 0; i < cartItems.length; i++) {
+            var subtotal = cartPrice[i] * cartQty[i];
+            total += subtotal;
+            
+            summaryContainer.innerHTML += 
+                '<div class="order-item">' +
+                '<span class="item-name">' + cartItems[i] + ' (x' + cartQty[i] + ')</span>' +
+                '<span class="item-price">Rp ' + subtotal.toLocaleString() + '</span>' +
+                '</div>';
+        }
+        
+        summaryContainer.innerHTML += '</div>';
+        
+        document.getElementById('checkout-total').innerText = 'Rp ' + total.toLocaleString();
+        
+        // Store total for success message
+        window.orderTotal = total;
+    }
+    
+    function processCheckout() {
+        var selectedPayment = document.querySelector('input[name="payment"]:checked');
+        
+        if(selectedPayment) {
+            var paymentMethod = selectedPayment.nextElementSibling.innerText;
+            var totalFormatted = 'Rp ' + window.orderTotal.toLocaleString();
+            
+            // Hide payment methods section and show success message
+            var paymentSection = document.querySelector('.checkout-section:nth-child(2)');
+            paymentSection.innerHTML = 
+                '<div class="success-notification">' +
+                '<h3>✓ Pesanan Berhasil Dibayar!</h3>' +
+                '<p><strong>Total Pembayaran: ' + totalFormatted + '</strong></p>' +
+                '<p>Metode Pembayaran: ' + paymentMethod + '</p>' +
+                '<p>Terima kasih telah berbelanja di Pinky Fashion Store</p>' +
+                '</div>';
+            
+            // Replace buttons with single "Kembali ke Beranda" button
+            var checkoutTotal = document.querySelector('.checkout-total');
+            checkoutTotal.innerHTML = 
+                '<button class="back-home-btn" onclick="window.location.href=\'index.html\'">Kembali ke Beranda</button>';
+        } else {
+            alert('Silakan pilih metode pembayaran!');
+        }
+    }
+    
+    window.onload = function() {
+        loadOrderSummary();
+    };
+</script>
+
+</body>
+</html>

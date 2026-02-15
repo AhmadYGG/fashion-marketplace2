@@ -3,42 +3,16 @@
 <head>
     <title>Keranjang - Pinky Fashion Store</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        var cartQty = [1, 1, 1, 1];
-        var cartPrice = [150000, 220000, 300000, 180000];
-        
-        function updateQty(index, change) {
-            cartQty[index] = cartQty[index] + change;
-            if(cartQty[index] < 1) {
-                cartQty[index] = 1;
-            }
-            
-            document.getElementById('qty-' + index).innerText = cartQty[index];
-            
-            var subtotal = cartPrice[index] * cartQty[index];
-            document.getElementById('subtotal-' + index).innerText = 'Rp ' + subtotal;
-            
-            updateTotal();
-        }
-        
-        function updateTotal() {
-            var total = 0;
-            for(var i = 0; i < cartQty.length; i++) {
-                total = total + (cartPrice[i] * cartQty[i]);
-            }
-            document.getElementById('total').innerText = 'Rp ' + total;
-        }
-    </script>
 </head>
 <body>
 
 <header>
     <h1>Pinky Fashion Store</h1>
     <div class="menu-top">
-        <a href="index.html">Home</a>
-        <a href="store.html">Store</a>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang Kami</a>
         <a href="keranjang.html">Keranjang</a>
-        <a href="kontak.html">Contact</a>
+        <a href="kontak.html">Kontak</a>
     </div>
 </header>
 
@@ -60,47 +34,58 @@
         <h2>Isi Keranjang</h2>
         
         <div class="cart-container">
-            <script>
-                var cartItems = [];
-                var cartImage = [];
-                
-                cartItems[0] = "Pink Hoodie";
-                cartItems[1] = "Women Heels";
-                cartItems[2] = "Leather Bag";
-                cartItems[3] = "Slim Jeans";
-                
-                cartImage[0] = "images/fashion-cewe/001.jpg";
-                cartImage[1] = "images/fashion-cewe/006.jpg";
-                cartImage[2] = "images/fashion-cewe/002.jpg";
-                cartImage[3] = "images/fashion-cowo/005.jpg";
-                
-                var total = 0;
-                
-                for(var i = 0; i < 4; i++){
-                    var subtotal = cartPrice[i] * cartQty[i];
-                    total = total + subtotal;
-                    
-                    document.write("<div class='cart-item'>");
-                    document.write("<img src='" + cartImage[i] + "' alt='" + cartItems[i] + "'>");
-                    document.write("<div class='cart-item-info'>");
-                    document.write("<h3>" + cartItems[i] + "</h3>");
-                    document.write("<p class='cart-price'>Rp " + cartPrice[i] + "</p>");
-                    document.write("<div class='cart-qty-control'>");
-                    document.write("<button onclick='updateQty(" + i + ", -1)'>-</button>");
-                    document.write("<span id='qty-" + i + "'>" + cartQty[i] + "</span>");
-                    document.write("<button onclick='updateQty(" + i + ", 1)'>+</button>");
-                    document.write("</div>");
-                    document.write("</div>");
-                    document.write("<div class='cart-item-subtotal'>");
-                    document.write("<p id='subtotal-" + i + "'>Rp " + subtotal + "</p>");
-                    document.write("</div>");
-                    document.write("</div>");
-                }
-                
-                document.write("<div class='cart-total'>");
-                document.write("<h3>Total Belanja: <span id='total'>Rp " + total + "</span></h3>");
-                document.write("</div>");
-            </script>
+            <div class="cart-item">
+                <img src="images/fashion-cewe/001.jpg" alt="Tropical Summer Dress">
+                <div class="cart-item-info">
+                    <h3>Tropical Summer Dress</h3>
+                    <p class="cart-price">Rp 249.000</p>
+                    <p class="cart-qty">Jumlah: 1</p>
+                </div>
+                <div class="cart-item-subtotal">
+                    <p>Rp 249.000</p>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="images/fashion-cewe/006.jpg" alt="Luna Ribbed Knit Set">
+                <div class="cart-item-info">
+                    <h3>Luna Ribbed Knit Set</h3>
+                    <p class="cart-price">Rp 299.000</p>
+                    <p class="cart-qty">Jumlah: 1</p>
+                </div>
+                <div class="cart-item-subtotal">
+                    <p>Rp 299.000</p>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="images/fashion-cewe/002.jpg" alt="Chic Vacation Blouse">
+                <div class="cart-item-info">
+                    <h3>Chic Vacation Blouse</h3>
+                    <p class="cart-price">Rp 135.000</p>
+                    <p class="cart-qty">Jumlah: 1</p>
+                </div>
+                <div class="cart-item-subtotal">
+                    <p>Rp 135.000</p>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="images/fashion-cowo/005.jpg" alt="Cardinal Kemeja Lengan Panjang Slim Fit">
+                <div class="cart-item-info">
+                    <h3>Cardinal Kemeja Lengan Panjang Slim Fit</h3>
+                    <p class="cart-price">Rp 219.000</p>
+                    <p class="cart-qty">Jumlah: 1</p>
+                </div>
+                <div class="cart-item-subtotal">
+                    <p>Rp 219.000</p>
+                </div>
+            </div>
+
+            <div class="cart-total">
+                <h3>Total Belanja: <span>Rp 902.000</span></h3>
+                <button class="cart-checkout-btn" onclick="window.location.href='checkout.html'">Checkout</button>
+            </div>
         </div>
     </main>
 </div>

@@ -5,42 +5,6 @@
     <link rel="stylesheet" href="style.css">
     <script>
         var currentPage = 1;
-        
-        function showPage(page) {
-            currentPage = page;
-            var cards = document.getElementsByClassName('product-card');
-            
-            // Hide semua card
-            for(var i = 0; i < cards.length; i++) {
-                cards[i].style.display = 'none';
-            }
-            
-            // Show card sesuai halaman
-            var start = (page - 1) * 10;
-            var end = start + 10;
-            for(var i = start; i < end && i < cards.length; i++) {
-                cards[i].style.display = 'block';
-            }
-            
-            // Update active pagination
-            var links = document.getElementsByClassName('page-link');
-            for(var i = 0; i < links.length; i++) {
-                links[i].className = 'page-link';
-            }
-            document.getElementById('page-' + page).className = 'page-link active';
-        }
-        
-        function nextPage() {
-            if(currentPage < 2) {
-                showPage(currentPage + 1);
-            }
-        }
-        
-        function prevPage() {
-            if(currentPage > 1) {
-                showPage(currentPage - 1);
-            }
-        }
     </script>
 </head>
 <body>
@@ -48,10 +12,10 @@
 <header>
     <h1>Pinky Fashion Store</h1>
     <div class="menu-top">
-        <a href="index.html">Home</a>
-        <a href="store.html">Store</a>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang Kami</a>
         <a href="keranjang.html">Keranjang</a>
-        <a href="kontak.html">Contact</a>
+        <a href="kontak.html">Kontak</a>
     </div>
 </header>
 
@@ -99,26 +63,26 @@
                 productWanita[18] = "Elara Cottage Linen Dress";
                 productWanita[19] = "Sierra Urban Leather Jacket";
                 
-                priceWanita[0] = "249000";
-                priceWanita[1] = "135000";
-                priceWanita[2] = "165000";
-                priceWanita[3] = "249000";
-                priceWanita[4] = "249000";
-                priceWanita[5] = "299000";
-                priceWanita[6] = "165000";
-                priceWanita[7] = "115000";
-                priceWanita[8] = "99000";
-                priceWanita[9] = "105000";
-                priceWanita[10] = "125000";
-                priceWanita[11] = "199000";
-                priceWanita[12] = "105000";
-                priceWanita[13] = "199000";
-                priceWanita[14] = "249000";
-                priceWanita[15] = "299000";
-                priceWanita[16] = "129000";
-                priceWanita[17] = "289000";
-                priceWanita[18] = "249000";
-                priceWanita[19] = "329000";
+                priceWanita[0] = "249.000";
+                priceWanita[1] = "135.000";
+                priceWanita[2] = "165.000";
+                priceWanita[3] = "249.000";
+                priceWanita[4] = "249.000";
+                priceWanita[5] = "299.000";
+                priceWanita[6] = "165.000";
+                priceWanita[7] = "115.000";
+                priceWanita[8] = "99.000";
+                priceWanita[9] = "105.000";
+                priceWanita[10] = "125.000";
+                priceWanita[11] = "199.000";
+                priceWanita[12] = "105.000";
+                priceWanita[13] = "199.000";
+                priceWanita[14] = "249.000";
+                priceWanita[15] = "299.000";
+                priceWanita[16] = "129.000";
+                priceWanita[17] = "289.000";
+                priceWanita[18] = "249.000";
+                priceWanita[19] = "329.000";
                 
                 imageWanita[0] = "images/fashion-cewe/001.jpg";
                 imageWanita[1] = "images/fashion-cewe/002.jpg";
@@ -142,22 +106,14 @@
                 imageWanita[19] = "images/fashion-cewe/020.jpg";
                 
                 for(var i = 0; i < 20; i++){
-                    var display = i < 10 ? 'block' : 'none';
-                    document.write("<div class='product-card' style='display:" + display + "'>");
+                    document.write("<div class='product-card'>");
                     document.write("<img src='" + imageWanita[i] + "' alt='" + productWanita[i] + "'>");
                     document.write("<h3>" + productWanita[i] + "</h3>");
                     document.write("<p>Rp " + priceWanita[i] + "</p>");
-                    document.write("<button>Beli Sekarang</button>");
+                    document.write("<button onclick='window.location.href=\"keranjang.html\"'>Masukkan Keranjang</button>");
                     document.write("</div>");
                 }
             </script>
-        </div>
-
-        <div class="pagination">
-            <a href="javascript:void(0)" onclick="prevPage()">&laquo;</a>
-            <a href="javascript:void(0)" onclick="showPage(1)" id="page-1" class="page-link active">1</a>
-            <a href="javascript:void(0)" onclick="showPage(2)" id="page-2" class="page-link">2</a>
-            <a href="javascript:void(0)" onclick="nextPage()">&raquo;</a>
         </div>
     </main>
 </div>

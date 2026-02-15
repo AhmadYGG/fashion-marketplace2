@@ -5,52 +5,16 @@
     <link rel="stylesheet" href="style.css">
     <script>
         var currentPage = 1;
-        
-        function showPage(page) {
-            currentPage = page;
-            var cards = document.getElementsByClassName('product-card');
-            
-            // Hide semua card
-            for(var i = 0; i < cards.length; i++) {
-                cards[i].style.display = 'none';
-            }
-            
-            // Show card sesuai halaman
-            var start = (page - 1) * 10;
-            var end = start + 10;
-            for(var i = start; i < end && i < cards.length; i++) {
-                cards[i].style.display = 'block';
-            }
-            
-            // Update active pagination
-            var links = document.getElementsByClassName('page-link');
-            for(var i = 0; i < links.length; i++) {
-                links[i].className = 'page-link';
-            }
-            document.getElementById('page-' + page).className = 'page-link active';
-        }
-        
-        function nextPage() {
-            if(currentPage < 2) {
-                showPage(currentPage + 1);
-            }
-        }
-        
-        function prevPage() {
-            if(currentPage > 1) {
-                showPage(currentPage - 1);
-            }
-        }
     </script>
 </head>
 <body>
 <header>
     <h1>Pinky Fashion Store</h1>
     <div class="menu-top">
-        <a href="index.html">Home</a>
-        <a href="store.html">Store</a>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang Kami</a>
         <a href="keranjang.html">Keranjang</a>
-        <a href="kontak.html">Contact</a>
+        <a href="kontak.html">Kontak</a>
     </div>
 </header>
 
@@ -98,26 +62,26 @@
                 productPria[18] = "Chetwode Pink Casual Shirt Series 19";
                 productPria[19] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 20";
                 
-                pricePria[0] = "694618";
-                pricePria[1] = "1504725";
-                pricePria[2] = "2667902";
-                pricePria[3] = "494379";
-                pricePria[4] = "219000";
-                pricePria[5] = "694618";
-                pricePria[6] = "1504725";
-                pricePria[7] = "2667902";
-                pricePria[8] = "494379";
-                pricePria[9] = "219000";
-                pricePria[10] = "694618";
-                pricePria[11] = "1504725";
-                pricePria[12] = "2667902";
-                pricePria[13] = "494379";
-                pricePria[14] = "219000";
-                pricePria[15] = "694618";
-                pricePria[16] = "1504725";
-                pricePria[17] = "2667902";
-                pricePria[18] = "494379";
-                pricePria[19] = "219000";
+                pricePria[0] = "185.000";
+                pricePria[1] = "225.000";
+                pricePria[2] = "275.000";
+                pricePria[3] = "195.000";
+                pricePria[4] = "219.000";
+                pricePria[5] = "245.000";
+                pricePria[6] = "265.000";
+                pricePria[7] = "299.000";
+                pricePria[8] = "189.000";
+                pricePria[9] = "235.000";
+                pricePria[10] = "199.000";
+                pricePria[11] = "249.000";
+                pricePria[12] = "285.000";
+                pricePria[13] = "179.000";
+                pricePria[14] = "259.000";
+                pricePria[15] = "215.000";
+                pricePria[16] = "239.000";
+                pricePria[17] = "269.000";
+                pricePria[18] = "205.000";
+                pricePria[19] = "229.000";
                 
                 imagePria[0] = "images/fashion-cowo/001.jpg";
                 imagePria[1] = "images/fashion-cowo/002.jpg";
@@ -141,22 +105,14 @@
                 imagePria[19] = "images/fashion-cowo/020.jpg";
                 
                 for(var i = 0; i < 20; i++){
-                    var display = i < 10 ? 'block' : 'none';
-                    document.write("<div class='product-card' style='display:" + display + "'>");
+                    document.write("<div class='product-card'>");
                     document.write("<img src='" + imagePria[i] + "' alt='" + productPria[i] + "'>");
                     document.write("<h3>" + productPria[i] + "</h3>");
                     document.write("<p>Rp " + pricePria[i] + "</p>");
-                    document.write("<button>Beli Sekarang</button>");
+                    document.write("<button onclick='window.location.href=\"keranjang.html\"'>Masukkan Keranjang</button>");
                     document.write("</div>");
                 }
             </script>
-        </div>
-
-        <div class="pagination">
-            <a href="javascript:void(0)" onclick="prevPage()">&laquo;</a>
-            <a href="javascript:void(0)" onclick="showPage(1)" id="page-1" class="page-link active">1</a>
-            <a href="javascript:void(0)" onclick="showPage(2)" id="page-2" class="page-link">2</a>
-            <a href="javascript:void(0)" onclick="nextPage()">&raquo;</a>
         </div>
     </main>
 </div>

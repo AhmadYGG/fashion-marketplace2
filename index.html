@@ -9,10 +9,10 @@
 <header>
     <h1>Pinky Fashion Store</h1>
     <div class="menu-top">
-        <a href="index.html">Home</a>
-        <a href="store.html">Store</a>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang Kami</a>
         <a href="keranjang.html">Keranjang</a>
-        <a href="kontak.html">Contact</a>
+        <a href="kontak.html">Kontak</a>
     </div>
 </header>
 
@@ -31,67 +31,9 @@
     </aside>
 
     <main class="content">
-        <h2>👗 Product Terbaru</h2>
-        <div class="product-grid">
-            <script>
-                var product = [];
-                var price = [];
-                var image = [];
-                
-                // Produk Wanita
-                product[0] = "Tropical Summer Dress";
-                product[1] = "Chic Vacation Blouse";
-                product[2] = "Luna Ribbed Knit Set";
-                product[3] = "Noir High-Rise Flare Slacks";
-                product[4] = "Aurelia Blossom Satin Dress";
-                
-                price[0] = "249000";
-                price[1] = "135000";
-                price[2] = "299000";
-                price[3] = "115000";
-                price[4] = "289000";
-                
-                image[0] = "images/fashion-cewe/001.jpg";
-                image[1] = "images/fashion-cewe/002.jpg";
-                image[2] = "images/fashion-cewe/006.jpg";
-                image[3] = "images/fashion-cewe/008.jpg";
-                image[4] = "images/fashion-cewe/018.jpg";
-                
-                // Produk Pria
-                product[5] = "Men's Carlo Casual Top";
-                product[6] = "Ultra Shirt Men";
-                product[7] = "Chetwode Blue Casual Shirt";
-                product[8] = "Lamont Men's Top Series 7";
-                product[9] = "Cardinal Kemeja Lengan Panjang Slim Fit";
-                
-                price[5] = "694618";
-                price[6] = "2667902";
-                price[7] = "494379";
-                price[8] = "1504725";
-                price[9] = "219000";
-                
-                image[5] = "images/fashion-cowo/001.jpg";
-                image[6] = "images/fashion-cowo/003.jpg";
-                image[7] = "images/fashion-cowo/004.jpg";
-                image[8] = "images/fashion-cowo/007.jpg";
-                image[9] = "images/fashion-cowo/010.jpg";
-
-                for(var i = 0; i < 10; i++){
-                    document.write("<div class='product-card'>");
-                    document.write("<img src='" + image[i] + "' alt='" + product[i] + "'>");
-                    document.write("<h3>" + product[i] + "</h3>");
-                    document.write("<p>Rp " + price[i] + "</p>");
-                    document.write("<button>Beli Sekarang</button>");
-                    document.write("</div>");
-                }
-            </script>
-        </div>
-
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">&raquo;</a>
+        <h2>Produk Terbaru</h2>
+        <div class="product-grid" id="product-container">
+            <!-- Products will be loaded here by JavaScript -->
         </div>
     </main>
 </div>
@@ -99,6 +41,112 @@
 <footer>
     <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
 </footer>
+
+<script>
+    var products = [];
+    var prices = [];
+    var images = [];
+    
+    // Produk Wanita
+    products[0] = "Tropical Summer Dress";
+    products[1] = "Chic Vacation Blouse";
+    products[2] = "Luna Ribbed Knit Set";
+    products[3] = "Noir High-Rise Flare Slacks";
+    products[4] = "Aurelia Blossom Satin Dress";
+    
+    prices[0] = "249.000";
+    prices[1] = "135.000";
+    prices[2] = "299.000";
+    prices[3] = "115.000";
+    prices[4] = "289.000";
+    
+    images[0] = "images/fashion-cewe/001.jpg";
+    images[1] = "images/fashion-cewe/002.jpg";
+    images[2] = "images/fashion-cewe/006.jpg";
+    images[3] = "images/fashion-cewe/008.jpg";
+    images[4] = "images/fashion-cewe/018.jpg";
+    
+    // Produk Pria
+    products[5] = "Men's Carlo Casual Top";
+    products[6] = "Ultra Shirt Men";
+    products[7] = "Chetwode Blue Casual Shirt";
+    products[8] = "Lamont Men's Top Series 7";
+    products[9] = "Cardinal Kemeja Lengan Panjang Slim Fit";
+    
+    prices[5] = "185.000";
+    prices[6] = "275.000";
+    prices[7] = "195.000";
+    prices[8] = "265.000";
+    prices[9] = "219.000";
+    
+    images[5] = "images/fashion-cowo/001.jpg";
+    images[6] = "images/fashion-cowo/003.jpg";
+    images[7] = "images/fashion-cowo/004.jpg";
+    images[8] = "images/fashion-cowo/007.jpg";
+    images[9] = "images/fashion-cowo/010.jpg";
+
+    // Produk Tambahan Wanita
+    products[10] = "Elegant Evening Gown";
+    products[11] = "Casual Denim Jacket";
+    products[12] = "Floral Maxi Skirt";
+    products[13] = "Silk Blouse Premium";
+    products[14] = "Leather Ankle Boots";
+    
+    prices[10] = "450.000";
+    prices[11] = "320.000";
+    prices[12] = "180.000";
+    prices[13] = "275.000";
+    prices[14] = "520.000";
+    
+    images[10] = "images/fashion-cewe/003.jpg";
+    images[11] = "images/fashion-cewe/004.jpg";
+    images[12] = "images/fashion-cewe/005.jpg";
+    images[13] = "images/fashion-cewe/007.jpg";
+    images[14] = "images/fashion-cewe/009.jpg";
+    
+    // Produk Tambahan Pria
+    products[15] = "Classic Polo Shirt";
+    products[16] = "Slim Fit Chinos";
+    products[17] = "Leather Belt Premium";
+    products[18] = "Casual Sneakers";
+    products[19] = "Denim Jacket Men";
+    
+    prices[15] = "185.000";
+    prices[16] = "340.000";
+    prices[17] = "150.000";
+    prices[18] = "425.000";
+    prices[19] = "380.000";
+    
+    images[15] = "images/fashion-cowo/002.jpg";
+    images[16] = "images/fashion-cowo/005.jpg";
+    images[17] = "images/fashion-cowo/006.jpg";
+    images[18] = "images/fashion-cowo/008.jpg";
+    images[19] = "images/fashion-cowo/009.jpg";
+
+    var currentPage = 1;
+    var itemsPerPage = 20; // Show all products
+    var totalPages = Math.ceil(products.length / itemsPerPage);
+
+    function displayProducts(page) {
+        var container = document.getElementById('product-container');
+        container.innerHTML = '';
+        
+        // Display all products
+        for(var i = 0; i < products.length; i++) {
+            var productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.innerHTML = 
+                "<img src='" + images[i] + "' alt='" + products[i] + "'>" +
+                "<h3>" + products[i] + "</h3>" +
+                "<p>Rp " + prices[i] + "</p>" +
+                "<button onclick=\"window.location.href='keranjang.html'\">Masukkan Keranjang</button>";
+            container.appendChild(productCard);
+        }
+    }
+
+    // Initialize - no pagination needed
+    displayProducts(1);
+</script>
 
 </body>
 </html>
