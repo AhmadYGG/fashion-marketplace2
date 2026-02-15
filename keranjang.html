@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keranjang - Pinky Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var cartQty = [1, 1, 1, 1];
+        var cartPrice = [150000, 220000, 300000, 180000];
+        
+        function updateQty(index, change) {
+            cartQty[index] = cartQty[index] + change;
+            if(cartQty[index] < 1) {
+                cartQty[index] = 1;
+            }
+            
+            document.getElementById('qty-' + index).innerText = cartQty[index];
+            
+            var subtotal = cartPrice[index] * cartQty[index];
+            document.getElementById('subtotal-' + index).innerText = 'Rp ' + subtotal;
+            
+            updateTotal();
+        }
+        
+        function updateTotal() {
+            var total = 0;
+            for(var i = 0; i < cartQty.length; i++) {
+                total = total + (cartPrice[i] * cartQty[i]);
+            }
+            document.getElementById('total').innerText = 'Rp ' + total;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Pinky Fashion Store</h1>
+    <div class="menu-top">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="keranjang.html">Keranjang</a>
+        <a href="kontak.html">Contact</a>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="images/banner-general.jpg" alt="Banner">
+</section>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>Kategori</h3>
+        <ul>
+            <li><a href="index.html">Produk Terbaru</a></li>
+            <li><a href="pria.html">Fashion Pria</a></li>
+            <li><a href="wanita.html">Fashion Wanita</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <h2>Isi Keranjang</h2>
+        
+        <div class="cart-container">
+            <script>
+                var cartItems = [];
+                var cartImage = [];
+                
+                cartItems[0] = "Pink Hoodie";
+                cartItems[1] = "Women Heels";
+                cartItems[2] = "Leather Bag";
+                cartItems[3] = "Slim Jeans";
+                
+                cartImage[0] = "images/fashion-cewe/001.jpg";
+                cartImage[1] = "images/fashion-cewe/006.jpg";
+                cartImage[2] = "images/fashion-cewe/002.jpg";
+                cartImage[3] = "images/fashion-cowo/005.jpg";
+                
+                var total = 0;
+                
+                for(var i = 0; i < 4; i++){
+                    var subtotal = cartPrice[i] * cartQty[i];
+                    total = total + subtotal;
+                    
+                    document.write("<div class='cart-item'>");
+                    document.write("<img src='" + cartImage[i] + "' alt='" + cartItems[i] + "'>");
+                    document.write("<div class='cart-item-info'>");
+                    document.write("<h3>" + cartItems[i] + "</h3>");
+                    document.write("<p class='cart-price'>Rp " + cartPrice[i] + "</p>");
+                    document.write("<div class='cart-qty-control'>");
+                    document.write("<button onclick='updateQty(" + i + ", -1)'>-</button>");
+                    document.write("<span id='qty-" + i + "'>" + cartQty[i] + "</span>");
+                    document.write("<button onclick='updateQty(" + i + ", 1)'>+</button>");
+                    document.write("</div>");
+                    document.write("</div>");
+                    document.write("<div class='cart-item-subtotal'>");
+                    document.write("<p id='subtotal-" + i + "'>Rp " + subtotal + "</p>");
+                    document.write("</div>");
+                    document.write("</div>");
+                }
+                
+                document.write("<div class='cart-total'>");
+                document.write("<h3>Total Belanja: <span id='total'>Rp " + total + "</span></h3>");
+                document.write("</div>");
+            </script>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

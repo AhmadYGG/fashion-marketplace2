@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produk Wanita - Pinky Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var currentPage = 1;
+        
+        function showPage(page) {
+            currentPage = page;
+            var cards = document.getElementsByClassName('product-card');
+            
+            // Hide semua card
+            for(var i = 0; i < cards.length; i++) {
+                cards[i].style.display = 'none';
+            }
+            
+            // Show card sesuai halaman
+            var start = (page - 1) * 10;
+            var end = start + 10;
+            for(var i = start; i < end && i < cards.length; i++) {
+                cards[i].style.display = 'block';
+            }
+            
+            // Update active pagination
+            var links = document.getElementsByClassName('page-link');
+            for(var i = 0; i < links.length; i++) {
+                links[i].className = 'page-link';
+            }
+            document.getElementById('page-' + page).className = 'page-link active';
+        }
+        
+        function nextPage() {
+            if(currentPage < 2) {
+                showPage(currentPage + 1);
+            }
+        }
+        
+        function prevPage() {
+            if(currentPage > 1) {
+                showPage(currentPage - 1);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Pinky Fashion Store</h1>
+    <div class="menu-top">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="keranjang.html">Keranjang</a>
+        <a href="kontak.html">Contact</a>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="images/banner-cewe.png" alt="Banner Wanita">
+</section>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>Kategori</h3>
+        <ul>
+            <li><a href="index.html">Produk Terbaru</a></li>
+            <li><a href="pria.html">Fashion Pria</a></li>
+            <li><a href="wanita.html">Fashion Wanita</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <h2>Produk Fashion Wanita</h2>
+        
+        <div class="product-grid">
+            <script>
+                var productWanita = [];
+                var priceWanita = [];
+                var imageWanita = [];
+                
+                productWanita[0] = "Tropical Summer Dress";
+                productWanita[1] = "Chic Vacation Blouse";
+                productWanita[2] = "Minimalist Mock-Neck Sweater";
+                productWanita[3] = "Aura Polka-Kiss Jumpsuit Set";
+                productWanita[4] = "Sahara Utility Jumpsuit";
+                productWanita[5] = "Luna Ribbed Knit Set";
+                productWanita[6] = "Victory Varsity Bomber Jacket";
+                productWanita[7] = "Noir High-Rise Flare Slacks";
+                productWanita[8] = "Artisan Stitch Tapered Trousers";
+                productWanita[9] = "Navy Executive Wide-Leg Trousers";
+                productWanita[10] = "Amara Satin Pleated Skirt";
+                productWanita[11] = "Peony Flared-Sleeve Blouse";
+                productWanita[12] = "Clara Essential Oxford Shirt";
+                productWanita[13] = "Retro-Vibe Denim Overalls";
+                productWanita[14] = "Nara Tiered Crinkle Dress";
+                productWanita[15] = "Valerie Navy Button-Down Midi Dress";
+                productWanita[16] = "Ziva Paisley Artistic Blouse";
+                productWanita[17] = "Aurelia Blossom Satin Dress";
+                productWanita[18] = "Elara Cottage Linen Dress";
+                productWanita[19] = "Sierra Urban Leather Jacket";
+                
+                priceWanita[0] = "249000";
+                priceWanita[1] = "135000";
+                priceWanita[2] = "165000";
+                priceWanita[3] = "249000";
+                priceWanita[4] = "249000";
+                priceWanita[5] = "299000";
+                priceWanita[6] = "165000";
+                priceWanita[7] = "115000";
+                priceWanita[8] = "99000";
+                priceWanita[9] = "105000";
+                priceWanita[10] = "125000";
+                priceWanita[11] = "199000";
+                priceWanita[12] = "105000";
+                priceWanita[13] = "199000";
+                priceWanita[14] = "249000";
+                priceWanita[15] = "299000";
+                priceWanita[16] = "129000";
+                priceWanita[17] = "289000";
+                priceWanita[18] = "249000";
+                priceWanita[19] = "329000";
+                
+                imageWanita[0] = "images/fashion-cewe/001.jpg";
+                imageWanita[1] = "images/fashion-cewe/002.jpg";
+                imageWanita[2] = "images/fashion-cewe/003.jpg";
+                imageWanita[3] = "images/fashion-cewe/004.jpg";
+                imageWanita[4] = "images/fashion-cewe/005.jpg";
+                imageWanita[5] = "images/fashion-cewe/006.jpg";
+                imageWanita[6] = "images/fashion-cewe/007.jpg";
+                imageWanita[7] = "images/fashion-cewe/008.jpg";
+                imageWanita[8] = "images/fashion-cewe/009.jpg";
+                imageWanita[9] = "images/fashion-cewe/010.jpg";
+                imageWanita[10] = "images/fashion-cewe/011.jpg";
+                imageWanita[11] = "images/fashion-cewe/012.jpg";
+                imageWanita[12] = "images/fashion-cewe/013.jpg";
+                imageWanita[13] = "images/fashion-cewe/014.jpg";
+                imageWanita[14] = "images/fashion-cewe/015.jpg";
+                imageWanita[15] = "images/fashion-cewe/016.jpg";
+                imageWanita[16] = "images/fashion-cewe/017.jpg";
+                imageWanita[17] = "images/fashion-cewe/018.jpg";
+                imageWanita[18] = "images/fashion-cewe/019.jpg";
+                imageWanita[19] = "images/fashion-cewe/020.jpg";
+                
+                for(var i = 0; i < 20; i++){
+                    var display = i < 10 ? 'block' : 'none';
+                    document.write("<div class='product-card' style='display:" + display + "'>");
+                    document.write("<img src='" + imageWanita[i] + "' alt='" + productWanita[i] + "'>");
+                    document.write("<h3>" + productWanita[i] + "</h3>");
+                    document.write("<p>Rp " + priceWanita[i] + "</p>");
+                    document.write("<button>Beli Sekarang</button>");
+                    document.write("</div>");
+                }
+            </script>
+        </div>
+
+        <div class="pagination">
+            <a href="javascript:void(0)" onclick="prevPage()">&laquo;</a>
+            <a href="javascript:void(0)" onclick="showPage(1)" id="page-1" class="page-link active">1</a>
+            <a href="javascript:void(0)" onclick="showPage(2)" id="page-2" class="page-link">2</a>
+            <a href="javascript:void(0)" onclick="nextPage()">&raquo;</a>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

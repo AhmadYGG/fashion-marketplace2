@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produk Pria - Pinky Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var currentPage = 1;
+        
+        function showPage(page) {
+            currentPage = page;
+            var cards = document.getElementsByClassName('product-card');
+            
+            // Hide semua card
+            for(var i = 0; i < cards.length; i++) {
+                cards[i].style.display = 'none';
+            }
+            
+            // Show card sesuai halaman
+            var start = (page - 1) * 10;
+            var end = start + 10;
+            for(var i = start; i < end && i < cards.length; i++) {
+                cards[i].style.display = 'block';
+            }
+            
+            // Update active pagination
+            var links = document.getElementsByClassName('page-link');
+            for(var i = 0; i < links.length; i++) {
+                links[i].className = 'page-link';
+            }
+            document.getElementById('page-' + page).className = 'page-link active';
+        }
+        
+        function nextPage() {
+            if(currentPage < 2) {
+                showPage(currentPage + 1);
+            }
+        }
+        
+        function prevPage() {
+            if(currentPage > 1) {
+                showPage(currentPage - 1);
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Pinky Fashion Store</h1>
+    <div class="menu-top">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="keranjang.html">Keranjang</a>
+        <a href="kontak.html">Contact</a>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="images/banner-cowo.png" alt="Banner Pria">
+</section>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>Kategori</h3>
+        <ul>
+            <li><a href="index.html">Produk Terbaru</a></li>
+            <li><a href="pria.html">Fashion Pria</a></li>
+            <li><a href="wanita.html">Fashion Wanita</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <h2>Produk Fashion Pria</h2>
+        
+        <div class="product-grid">
+            <script>
+                var productPria = [];
+                var pricePria = [];
+                var imagePria = [];
+                
+                productPria[0] = "Men's Carlo Casual Top";
+                productPria[1] = "Lamont Men's Top";
+                productPria[2] = "Ultra Shirt Men";
+                productPria[3] = "Chetwode Blue Casual Shirt";
+                productPria[4] = "Cardinal Kemeja Lengan Panjang Slim Fit";
+                productPria[5] = "Men's Carlo Casual Top Series 6";
+                productPria[6] = "Lamont Men's Top Series 7";
+                productPria[7] = "Ultra Shirt Men Series 8";
+                productPria[8] = "Chetwode Blue Casual Shirt Series 9";
+                productPria[9] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 10";
+                productPria[10] = "Men's Carlo Casual Top Series 11";
+                productPria[11] = "Lamont Men's Top Series 12";
+                productPria[12] = "Ultra Shirt Men Series 13";
+                productPria[13] = "Chetwode Blue Casual Shirt Series 14";
+                productPria[14] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 15";
+                productPria[15] = "Men's Carlo Casual Top Series 16";
+                productPria[16] = "Lamont Men's Top Series 17";
+                productPria[17] = "Ultra Shirt Men Series 18";
+                productPria[18] = "Chetwode Pink Casual Shirt Series 19";
+                productPria[19] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 20";
+                
+                pricePria[0] = "694618";
+                pricePria[1] = "1504725";
+                pricePria[2] = "2667902";
+                pricePria[3] = "494379";
+                pricePria[4] = "219000";
+                pricePria[5] = "694618";
+                pricePria[6] = "1504725";
+                pricePria[7] = "2667902";
+                pricePria[8] = "494379";
+                pricePria[9] = "219000";
+                pricePria[10] = "694618";
+                pricePria[11] = "1504725";
+                pricePria[12] = "2667902";
+                pricePria[13] = "494379";
+                pricePria[14] = "219000";
+                pricePria[15] = "694618";
+                pricePria[16] = "1504725";
+                pricePria[17] = "2667902";
+                pricePria[18] = "494379";
+                pricePria[19] = "219000";
+                
+                imagePria[0] = "images/fashion-cowo/001.jpg";
+                imagePria[1] = "images/fashion-cowo/002.jpg";
+                imagePria[2] = "images/fashion-cowo/003.jpg";
+                imagePria[3] = "images/fashion-cowo/004.jpg";
+                imagePria[4] = "images/fashion-cowo/005.jpg";
+                imagePria[5] = "images/fashion-cowo/006.jpg";
+                imagePria[6] = "images/fashion-cowo/007.jpg";
+                imagePria[7] = "images/fashion-cowo/008.jpg";
+                imagePria[8] = "images/fashion-cowo/009.jpg";
+                imagePria[9] = "images/fashion-cowo/010.jpg";
+                imagePria[10] = "images/fashion-cowo/011.jpg";
+                imagePria[11] = "images/fashion-cowo/012.jpg";
+                imagePria[12] = "images/fashion-cowo/013.jpg";
+                imagePria[13] = "images/fashion-cowo/014.jpg";
+                imagePria[14] = "images/fashion-cowo/015.jpg";
+                imagePria[15] = "images/fashion-cowo/016.jpg";
+                imagePria[16] = "images/fashion-cowo/017.jpg";
+                imagePria[17] = "images/fashion-cowo/018.jpg";
+                imagePria[18] = "images/fashion-cowo/019.jpg";
+                imagePria[19] = "images/fashion-cowo/020.jpg";
+                
+                for(var i = 0; i < 20; i++){
+                    var display = i < 10 ? 'block' : 'none';
+                    document.write("<div class='product-card' style='display:" + display + "'>");
+                    document.write("<img src='" + imagePria[i] + "' alt='" + productPria[i] + "'>");
+                    document.write("<h3>" + productPria[i] + "</h3>");
+                    document.write("<p>Rp " + pricePria[i] + "</p>");
+                    document.write("<button>Beli Sekarang</button>");
+                    document.write("</div>");
+                }
+            </script>
+        </div>
+
+        <div class="pagination">
+            <a href="javascript:void(0)" onclick="prevPage()">&laquo;</a>
+            <a href="javascript:void(0)" onclick="showPage(1)" id="page-1" class="page-link active">1</a>
+            <a href="javascript:void(0)" onclick="showPage(2)" id="page-2" class="page-link">2</a>
+            <a href="javascript:void(0)" onclick="nextPage()">&raquo;</a>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

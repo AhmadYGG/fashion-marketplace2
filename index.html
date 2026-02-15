@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pinky Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Pinky Fashion Store</h1>
+    <div class="menu-top">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="keranjang.html">Keranjang</a>
+        <a href="kontak.html">Contact</a>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="images/banner-general.jpg" alt="Banner">
+</section>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>Kategori</h3>
+        <ul>
+            <li><a href="index.html">Produk Terbaru</a></li>
+            <li><a href="pria.html">Fashion Pria</a></li>
+            <li><a href="wanita.html">Fashion Wanita</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <h2>👗 Product Terbaru</h2>
+        <div class="product-grid">
+            <script>
+                var product = [];
+                var price = [];
+                var image = [];
+                
+                // Produk Wanita
+                product[0] = "Tropical Summer Dress";
+                product[1] = "Chic Vacation Blouse";
+                product[2] = "Luna Ribbed Knit Set";
+                product[3] = "Noir High-Rise Flare Slacks";
+                product[4] = "Aurelia Blossom Satin Dress";
+                
+                price[0] = "249000";
+                price[1] = "135000";
+                price[2] = "299000";
+                price[3] = "115000";
+                price[4] = "289000";
+                
+                image[0] = "images/fashion-cewe/001.jpg";
+                image[1] = "images/fashion-cewe/002.jpg";
+                image[2] = "images/fashion-cewe/006.jpg";
+                image[3] = "images/fashion-cewe/008.jpg";
+                image[4] = "images/fashion-cewe/018.jpg";
+                
+                // Produk Pria
+                product[5] = "Men's Carlo Casual Top";
+                product[6] = "Ultra Shirt Men";
+                product[7] = "Chetwode Blue Casual Shirt";
+                product[8] = "Lamont Men's Top Series 7";
+                product[9] = "Cardinal Kemeja Lengan Panjang Slim Fit";
+                
+                price[5] = "694618";
+                price[6] = "2667902";
+                price[7] = "494379";
+                price[8] = "1504725";
+                price[9] = "219000";
+                
+                image[5] = "images/fashion-cowo/001.jpg";
+                image[6] = "images/fashion-cowo/003.jpg";
+                image[7] = "images/fashion-cowo/004.jpg";
+                image[8] = "images/fashion-cowo/007.jpg";
+                image[9] = "images/fashion-cowo/010.jpg";
+
+                for(var i = 0; i < 10; i++){
+                    document.write("<div class='product-card'>");
+                    document.write("<img src='" + image[i] + "' alt='" + product[i] + "'>");
+                    document.write("<h3>" + product[i] + "</h3>");
+                    document.write("<p>Rp " + price[i] + "</p>");
+                    document.write("<button>Beli Sekarang</button>");
+                    document.write("</div>");
+                }
+            </script>
+        </div>
+
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
