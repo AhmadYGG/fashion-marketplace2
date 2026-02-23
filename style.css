@@ -28,6 +28,13 @@ header h1 {
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 8px;
+    white-space: nowrap;
+}
+
+.menu-top {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .menu-top a:hover {
