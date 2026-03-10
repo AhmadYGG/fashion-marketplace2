@@ -54,104 +54,31 @@
     <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
 </footer>
 
+<script src="js/product-data.js"></script>
 <script>
     var products = [];
     var prices = [];
     var images = [];
     var ratings = [];
+    var productTypes = [];
     
-    products[0] = "Tropical Summer Dress";
-    products[1] = "Chic Vacation Blouse";
-    products[2] = "Luna Ribbed Knit Set";
-    products[3] = "Noir High-Rise Flare Slacks";
-    products[4] = "Aurelia Blossom Satin Dress";
+    // Wanita products (0-19)
+    for(var i = 0; i < productDataWanita.length; i++) {
+        products[i] = productDataWanita[i].nama;
+        prices[i] = productDataWanita[i].harga.toString();
+        images[i] = 'images/fashion-cewe/' + productDataWanita[i].kode + '.webp';
+        productTypes[i] = 'wanita';
+        ratings[i] = (4 + Math.random()).toFixed(1);
+    }
     
-    prices[0] = "249.000";
-    prices[1] = "135.000";
-    prices[2] = "299.000";
-    prices[3] = "115.000";
-    prices[4] = "289.000";
-    
-    images[0] = "images/fashion-cewe/001.webp";
-    images[1] = "images/fashion-cewe/002.webp";
-    images[2] = "images/fashion-cewe/006.webp";
-    images[3] = "images/fashion-cewe/008.webp";
-    images[4] = "images/fashion-cewe/018.webp";
-    
-    products[5] = "Men's Carlo Casual Top";
-    products[6] = "Ultra Shirt Men";
-    products[7] = "Chetwode Blue Casual Shirt";
-    products[8] = "Lamont Men's Top Series 7";
-    products[9] = "Cardinal Kemeja Lengan Panjang Slim Fit";
-    
-    prices[5] = "185.000";
-    prices[6] = "275.000";
-    prices[7] = "195.000";
-    prices[8] = "265.000";
-    prices[9] = "219.000";
-    
-    images[5] = "images/fashion-cowo/001.webp";
-    images[6] = "images/fashion-cowo/003.webp";
-    images[7] = "images/fashion-cowo/004.webp";
-    images[8] = "images/fashion-cowo/007.webp";
-    images[9] = "images/fashion-cowo/010.webp";
-
-    products[10] = "Elegant Evening Gown";
-    products[11] = "Casual Denim Jacket";
-    products[12] = "Floral Maxi Skirt";
-    products[13] = "Silk Blouse Premium";
-    products[14] = "Leather Ankle Boots";
-    
-    prices[10] = "450.000";
-    prices[11] = "320.000";
-    prices[12] = "180.000";
-    prices[13] = "275.000";
-    prices[14] = "520.000";
-    
-    images[10] = "images/fashion-cewe/003.webp";
-    images[11] = "images/fashion-cewe/004.webp";
-    images[12] = "images/fashion-cewe/005.webp";
-    images[13] = "images/fashion-cewe/007.webp";
-    images[14] = "images/fashion-cewe/009.webp";
-    
-    products[15] = "Classic Polo Shirt";
-    products[16] = "Slim Fit Chinos";
-    products[17] = "Leather Belt Premium";
-    products[18] = "Casual Sneakers";
-    products[19] = "Denim Jacket Men";
-    
-    prices[15] = "185.000";
-    prices[16] = "340.000";
-    prices[17] = "150.000";
-    prices[18] = "425.000";
-    prices[19] = "380.000";
-    
-    images[15] = "images/fashion-cowo/002.webp";
-    images[16] = "images/fashion-cowo/005.webp";
-    images[17] = "images/fashion-cowo/006.webp";
-    images[18] = "images/fashion-cowo/008.webp";
-    images[19] = "images/fashion-cowo/009.webp";
-    
-    ratings[0] = 4.7;
-    ratings[1] = 4.3;
-    ratings[2] = 4.8;
-    ratings[3] = 4.5;
-    ratings[4] = 4.9;
-    ratings[5] = 4.6;
-    ratings[6] = 4.4;
-    ratings[7] = 4.7;
-    ratings[8] = 4.5;
-    ratings[9] = 4.8;
-    ratings[10] = 4.6;
-    ratings[11] = 4.2;
-    ratings[12] = 4.5;
-    ratings[13] = 4.7;
-    ratings[14] = 4.4;
-    ratings[15] = 4.3;
-    ratings[16] = 4.6;
-    ratings[17] = 4.5;
-    ratings[18] = 4.8;
-    ratings[19] = 4.7;
+    // Pria products (20-39)
+    for(var i = 0; i < productDataPria.length; i++) {
+        products[20 + i] = productDataPria[i].nama;
+        prices[20 + i] = productDataPria[i].harga.toString();
+        images[20 + i] = 'images/fashion-cowo/' + String(productDataPria[i].no).padStart(3, '0') + '.webp';
+        productTypes[20 + i] = 'pria';
+        ratings[20 + i] = (4 + Math.random()).toFixed(1);
+    }
 
     var currentPage = 1;
     var itemsPerPage = 20;
@@ -164,17 +91,17 @@
         for(var i = 0; i < products.length; i++) {
             var productCard = document.createElement('div');
             productCard.className = 'product-card';
-            productCard.onclick = (function(index) {
+            productCard.onclick = (function(index, type) {
                 return function() {
-                    window.location.href = 'detail-product.html?id=' + index;
+                    window.location.href = 'detail-product.html?id=' + index + '&type=' + type;
                 };
-            })(i);
+            })(i < 20 ? i : i - 20, productTypes[i]);
             
             productCard.innerHTML = 
                 "<img src='" + images[i] + "' alt='" + products[i] + "'>" +
                 "<h3>" + products[i] + "</h3>" +
                 "<div class='product-footer'>" +
-                "<p class='price'>Rp " + prices[i] + "</p>" +
+                "<p class='price'>Rp " + parseInt(prices[i]).toLocaleString('id-ID') + "</p>" +
                 "<div class='rating'>" +
                 "<span class='star'>★</span>" +
                 "<span class='rating-number'>" + ratings[i] + "</span>" +

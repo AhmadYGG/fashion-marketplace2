@@ -109,16 +109,16 @@
         var product = getProductById(productId, isWanita);
         
         if(product) {
-            var productName = isWanita ? product.nama : product.nama;
-            var kategori = isWanita ? product.kategori : product.kategori;
-            var material = isWanita ? product.material : product.material;
-            var warna = isWanita ? product.warna : product.warna;
+            var productName = product.nama;
+            var kategori = product.kategori;
+            var material = product.material;
+            var warna = product.warna;
             var ukuran = isWanita ? product.ukuran : product.fit_ukuran;
-            var harga = isWanita ? product.harga : product.harga;
+            var harga = product.harga;
             
             var imagePath = isWanita ? 
-                'images/fashion-cewe/' + String(productId + 1).padStart(3, '0') + '.webp' :
-                'images/fashion-cowo/' + String(productId + 1).padStart(3, '0') + '.webp';
+                'images/fashion-cewe/' + product.kode + '.webp' :
+                'images/fashion-cowo/' + String(product.no).padStart(3, '0') + '.webp';
             
             var description = getProductDescription(productName, isWanita);
             
