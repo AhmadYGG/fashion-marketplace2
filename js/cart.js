@@ -1,29 +1,20 @@
-// Struktur data keranjang di localStorage
-// Format: { id, name, price, quantity, image }
-
-// Ambil data keranjang dari localStorage
 function getCart() {
     const cart = localStorage.getItem('cart');
     return cart ? JSON.parse(cart) : [];
 }
 
-// Simpan keranjang ke localStorage
 function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Tambah item ke keranjang
 function addToCart(product) {
     let cart = getCart();
     
-    // Cek apakah produk sudah ada di keranjang
     const existingItem = cart.find(item => item.id === product.id);
     
     if (existingItem) {
-        // Jika ada, tambah quantity
         existingItem.quantity += product.quantity || 1;
     } else {
-        // Jika belum, tambah item baru
         cart.push({
             id: product.id,
             name: product.name,
@@ -38,7 +29,6 @@ function addToCart(product) {
     showNotification(`${product.name} ditambahkan ke keranjang!`);
 }
 
-// Hapus item dari keranjang
 function removeFromCart(productId) {
     let cart = getCart();
     cart = cart.filter(item => item.id !== productId);
@@ -47,7 +37,6 @@ function removeFromCart(productId) {
     renderCart();
 }
 
-// Update quantity item
 function updateQuantity(productId, newQuantity) {
     let cart = getCart();
     const item = cart.find(item => item.id === productId);
@@ -64,19 +53,16 @@ function updateQuantity(productId, newQuantity) {
     }
 }
 
-// Hitung total harga keranjang
 function calculateTotal() {
     const cart = getCart();
     return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
 
-// Hitung jumlah item di keranjang
 function getCartCount() {
     const cart = getCart();
     return cart.reduce((count, item) => count + item.quantity, 0);
 }
 
-// Update badge counter di navbar
 function updateCartBadge() {
     const count = getCartCount();
     const badge = document.getElementById('cart-badge');
@@ -91,7 +77,6 @@ function updateCartBadge() {
     }
 }
 
-// Render keranjang ke halaman keranjang.html
 function renderCart() {
     const cart = getCart();
     const container = document.getElementById('cart-container');
@@ -100,9 +85,11 @@ function renderCart() {
     
     if (cart.length === 0) {
         container.innerHTML = `
-            <div class="cart-empty">
-                <p>Keranjang Anda kosong</p>
-                <a href="index.html" class="cart-empty-link">Mulai Belanja</a>
+            <div class="cart-empty-state">
+                <div class="empty-icon">🛒</div>
+                <h3>Keranjang Anda Kosong</h3>
+                <p>Belum ada produk yang ditambahkan ke keranjang</p>
+                <a href="index.html" class="empty-state-btn">Mulai Belanja</a>
             </div>
         `;
         document.querySelector('.cart-summary-card').style.display = 'none';
@@ -136,7 +123,6 @@ function renderCart() {
     updateCartSummary();
 }
 
-// Update cart summary di sidebar
 function updateCartSummary() {
     const cart = getCart();
     const summaryContainer = document.getElementById('cart-summary-items');
@@ -166,32 +152,10 @@ function updateCartSummary() {
     }
 }
 
-// Tampilkan notifikasi
 function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: #4CAF50;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
-        z-index: 1000;
-        animation: slideIn 0.3s ease-in-out;
-    `;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-in-out';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
+    alert(message);
 }
 
-// Render checkout items
 function renderCheckoutItems() {
     const cart = getCart();
     const itemsContainer = document.getElementById('checkout-items');
@@ -224,7 +188,6 @@ function renderCheckoutItems() {
     itemsContainer.innerHTML = html;
 }
 
-// Render checkout summary di sidebar
 function renderCheckoutSummary() {
     const cart = getCart();
     const summaryContainer = document.getElementById('checkout-summary-items');
@@ -246,22 +209,18 @@ function renderCheckoutSummary() {
     summaryContainer.innerHTML = html;
 }
 
-// Clear keranjang setelah checkout
 function clearCart() {
     localStorage.removeItem('cart');
     updateCartBadge();
 }
 
-// CSS untuk animasi notifikasi
 document.addEventListener('DOMContentLoaded', function() {
     updateCartBadge();
     
-    // Jika di halaman keranjang, render cart
     if (document.getElementById('cart-container')) {
         renderCart();
     }
     
-    // Jika di halaman checkout, render items dan summary
     if (document.getElementById('checkout-items')) {
         renderCheckoutItems();
         renderCheckoutSummary();
@@ -273,7 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// CSS untuk animasi notifikasi
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {

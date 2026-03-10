@@ -54,6 +54,28 @@
                 
                 <p class="detail-price" id="detail-price"></p>
                 
+                <div class="product-specs">
+                    <h4>Spesifikasi Produk</h4>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Kategori</span>
+                            <span class="spec-value" id="detail-kategori">-</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Material</span>
+                            <span class="spec-value" id="detail-material">-</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Warna</span>
+                            <span class="spec-value" id="detail-warna">-</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Ukuran</span>
+                            <span class="spec-value" id="detail-ukuran">-</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="detail-description">
                     <h3>Deskripsi Produk</h3>
                     <p id="detail-description"></p>
@@ -70,6 +92,7 @@
     <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
 </footer>
 
+<script src="js/product-data.js"></script>
 <script>
     // Get product data from URL parameters
     function getUrlParameter(name) {
@@ -79,208 +102,64 @@
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
     
-    // Product descriptions
-    var descriptions = [];
-    
-    // Wanita descriptions (0-19)
-    descriptions[0] = "Dress musim panas yang sempurna dengan motif tropis yang cerah. Terbuat dari bahan katun yang ringan dan breathable, cocok untuk cuaca panas. Desain yang stylish dan nyaman untuk aktivitas sehari-hari.";
-    descriptions[1] = "Blouse chic yang elegan dengan desain modern. Cocok untuk liburan atau acara santai. Material premium yang lembut di kulit dengan cutting yang flattering.";
-    descriptions[2] = "Sweater mock-neck minimalis dengan desain yang simple namun elegant. Material rajut yang lembut dan hangat. Perfect untuk cuaca dingin.";
-    descriptions[3] = "Jumpsuit set dengan motif polka yang playful. Desain yang cute dan comfortable. Cocok untuk berbagai acara casual.";
-    descriptions[4] = "Jumpsuit utility Sahara dengan desain yang praktis dan stylish. Material yang durable dan nyaman. Perfect untuk outdoor activities.";
-    descriptions[5] = "Set knit ribbed yang nyaman dan stylish. Terdiri dari atasan dan bawahan yang matching. Perfect untuk tampilan casual yang tetap fashionable.";
-    descriptions[6] = "Jaket bomber varsity dengan desain sporty yang trendy. Material yang tebal dan hangat. Cocok untuk tampilan casual yang cool.";
-    descriptions[7] = "Celana slacks high-rise dengan model flare yang timeless. Warna hitam yang versatile, mudah dipadukan dengan berbagai atasan. Material berkualitas tinggi.";
-    descriptions[8] = "Celana tapered dengan detail jahitan artisan yang unik. Desain yang modern dan comfortable. Cocok untuk daily wear.";
-    descriptions[9] = "Celana wide-leg executive dengan warna navy yang professional. Perfect untuk office wear. Material yang tidak mudah kusut.";
-    descriptions[10] = "Rok pleated satin Amara dengan desain yang feminine. Material satin yang mengkilap dan mewah. Cocok untuk acara formal.";
-    descriptions[11] = "Blouse dengan lengan flare dan motif peony yang cantik. Desain yang romantic dan elegant. Material yang lembut dan breathable.";
-    descriptions[12] = "Kemeja oxford Clara yang essential untuk wardrobe. Desain classic yang timeless. Material berkualitas tinggi.";
-    descriptions[13] = "Overall denim dengan vibe retro yang fun. Desain yang casual dan comfortable. Perfect untuk weekend outfit.";
-    descriptions[14] = "Dress tiered Nara dengan material crinkle yang unik. Desain yang flowing dan comfortable. Cocok untuk berbagai acara.";
-    descriptions[15] = "Dress midi navy Valerie dengan button-down detail. Desain yang elegant dan versatile. Perfect untuk office atau acara formal.";
-    descriptions[16] = "Blouse artistic Ziva dengan motif paisley yang eye-catching. Desain yang unique dan stylish. Material yang premium.";
-    descriptions[17] = "Dress satin dengan motif bunga Aurelia yang cantik. Desain yang feminine dan elegan, cocok untuk acara formal maupun semi-formal. Material satin yang mengkilap dan mewah.";
-    descriptions[18] = "Dress linen cottage Elara dengan desain yang natural dan comfortable. Material linen yang breathable. Perfect untuk summer.";
-    descriptions[19] = "Jaket kulit urban Sierra dengan desain yang edgy. Material kulit berkualitas tinggi. Cocok untuk tampilan yang bold dan stylish.";
-    
-    // Pria descriptions (5-24 mapped to index 5-24)
-    descriptions[5] = "Kaos casual pria dengan desain Carlo yang modern. Bahan cotton combed yang nyaman dan tidak panas. Cocok untuk daily wear.";
-    descriptions[6] = "Atasan pria Lamont dengan desain yang simple namun stylish. Material yang breathable dan comfortable. Perfect untuk casual activities.";
-    descriptions[7] = "Kemeja pria Ultra dengan kualitas premium. Desain yang simple namun tetap stylish. Material yang breathable dan tidak mudah kusut.";
-    descriptions[8] = "Kemeja casual Chetwode Blue dengan warna biru yang menenangkan. Cocok untuk berbagai acara casual. Cutting slim fit yang modern.";
-    descriptions[9] = "Kemeja lengan panjang Cardinal dengan model slim fit. Desain yang professional dan elegan. Cocok untuk ke kantor atau acara formal.";
-    descriptions[10] = "Kaos casual Carlo series 6 dengan desain yang trendy. Material cotton yang soft dan nyaman. Perfect untuk everyday wear.";
-    descriptions[11] = "Atasan pria Lamont series 7 dengan desain yang trendy. Material berkualitas tinggi yang tahan lama. Nyaman dipakai seharian.";
-    descriptions[12] = "Kemeja Ultra series 8 dengan cutting yang modern. Material premium yang tidak mudah kusut. Cocok untuk berbagai acara.";
-    descriptions[13] = "Kemeja Chetwode Blue series 9 dengan desain yang fresh. Material yang breathable dan comfortable. Perfect untuk casual look.";
-    descriptions[14] = "Kemeja Cardinal series 10 dengan model slim fit yang modern. Desain yang elegant dan professional. Cocok untuk formal occasions.";
-    descriptions[15] = "Kaos Carlo series 11 dengan desain yang simple. Material cotton combed yang nyaman. Perfect untuk daily activities.";
-    descriptions[16] = "Atasan Lamont series 12 dengan desain yang stylish. Material yang durable dan comfortable. Cocok untuk casual wear.";
-    descriptions[17] = "Kemeja Ultra series 13 dengan kualitas premium. Desain yang timeless dan elegant. Material yang tidak mudah kusut.";
-    descriptions[18] = "Kemeja Chetwode Blue series 14 dengan warna yang versatile. Cutting yang modern dan comfortable. Perfect untuk casual events.";
-    descriptions[19] = "Kemeja Cardinal series 15 dengan desain yang sophisticated. Material berkualitas tinggi. Cocok untuk professional setting.";
-    descriptions[20] = "Kaos Carlo series 16 dengan desain yang trendy. Material cotton yang soft dan breathable. Perfect untuk everyday wear.";
-    descriptions[21] = "Atasan Lamont series 17 dengan desain yang modern. Material yang comfortable dan durable. Cocok untuk casual activities.";
-    descriptions[22] = "Kemeja Ultra series 18 dengan cutting yang perfect. Material premium yang elegant. Cocok untuk berbagai acara.";
-    descriptions[23] = "Kemeja Chetwode Pink series 19 dengan warna yang bold. Desain yang stylish dan modern. Perfect untuk stand out.";
-    descriptions[24] = "Kemeja Cardinal series 20 dengan model slim fit. Desain yang professional dan elegant. Material berkualitas tinggi.";
-    
-    // Get product ID from URL
+    // Get product ID and type from URL
     var productId = parseInt(getUrlParameter('id'));
+    var productType = getUrlParameter('type') || 'wanita'; // default: wanita
+    var isWanita = productType === 'wanita';
     
     if(productId || productId === 0) {
-        // Load product data
-        var products = [];
-        var prices = [];
-        var images = [];
-        var ratings = [];
+        // Get product data
+        var product = getProductById(productId, isWanita);
         
-        // Produk Wanita
-        products[0] = "Tropical Summer Dress";
-        products[1] = "Chic Vacation Blouse";
-        products[2] = "Luna Ribbed Knit Set";
-        products[3] = "Noir High-Rise Flare Slacks";
-        products[4] = "Aurelia Blossom Satin Dress";
-        
-        prices[0] = 249000;
-        prices[1] = 135000;
-        prices[2] = 299000;
-        prices[3] = 115000;
-        prices[4] = 289000;
-        
-        images[0] = "images/fashion-cewe/001.jpg";
-        images[1] = "images/fashion-cewe/002.jpg";
-        images[2] = "images/fashion-cewe/006.jpg";
-        images[3] = "images/fashion-cewe/008.jpg";
-        images[4] = "images/fashion-cewe/018.jpg";
-        
-        // Produk Pria
-        products[5] = "Men's Carlo Casual Top";
-        products[6] = "Ultra Shirt Men";
-        products[7] = "Chetwode Blue Casual Shirt";
-        products[8] = "Lamont Men's Top Series 7";
-        products[9] = "Cardinal Kemeja Lengan Panjang Slim Fit";
-        
-        prices[5] = 185000;
-        prices[6] = 275000;
-        prices[7] = 195000;
-        prices[8] = 265000;
-        prices[9] = 219000;
-        
-        images[5] = "images/fashion-cowo/001.jpg";
-        images[6] = "images/fashion-cowo/003.jpg";
-        images[7] = "images/fashion-cowo/004.jpg";
-        images[8] = "images/fashion-cowo/007.jpg";
-        images[9] = "images/fashion-cowo/010.jpg";
-
-        // Produk Tambahan Wanita
-        products[10] = "Elegant Evening Gown";
-        products[11] = "Casual Denim Jacket";
-        products[12] = "Floral Maxi Skirt";
-        products[13] = "Silk Blouse Premium";
-        products[14] = "Leather Ankle Boots";
-        
-        prices[10] = 450000;
-        prices[11] = 320000;
-        prices[12] = 180000;
-        prices[13] = 275000;
-        prices[14] = 520000;
-        
-        images[10] = "images/fashion-cewe/003.jpg";
-        images[11] = "images/fashion-cewe/004.jpg";
-        images[12] = "images/fashion-cewe/005.jpg";
-        images[13] = "images/fashion-cewe/007.jpg";
-        images[14] = "images/fashion-cewe/009.jpg";
-        
-        // Produk Tambahan Pria
-        products[15] = "Classic Polo Shirt";
-        products[16] = "Slim Fit Chinos";
-        products[17] = "Leather Belt Premium";
-        products[18] = "Casual Sneakers";
-        products[19] = "Denim Jacket Men";
-        
-        prices[15] = 185000;
-        prices[16] = 340000;
-        prices[17] = 150000;
-        prices[18] = 425000;
-        prices[19] = 380000;
-        
-        images[15] = "images/fashion-cowo/002.jpg";
-        images[16] = "images/fashion-cowo/005.jpg";
-        images[17] = "images/fashion-cowo/006.jpg";
-        images[18] = "images/fashion-cowo/008.jpg";
-        images[19] = "images/fashion-cowo/009.jpg";
-        
-        // Produk Pria lengkap (20-24)
-        products[20] = "Men's Carlo Casual Top Series 11";
-        products[21] = "Lamont Men's Top Series 12";
-        products[22] = "Ultra Shirt Men Series 13";
-        products[23] = "Chetwode Pink Casual Shirt Series 19";
-        products[24] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 20";
-        
-        prices[20] = 199000;
-        prices[21] = 249000;
-        prices[22] = 285000;
-        prices[23] = 205000;
-        prices[24] = 229000;
-        
-        images[20] = "images/fashion-cowo/011.jpg";
-        images[21] = "images/fashion-cowo/012.jpg";
-        images[22] = "images/fashion-cowo/013.jpg";
-        images[23] = "images/fashion-cowo/019.jpg";
-        images[24] = "images/fashion-cowo/020.jpg";
-        
-        ratings[0] = 4.7;
-        ratings[1] = 4.3;
-        ratings[2] = 4.8;
-        ratings[3] = 4.5;
-        ratings[4] = 4.9;
-        ratings[5] = 4.6;
-        ratings[6] = 4.4;
-        ratings[7] = 4.7;
-        ratings[8] = 4.5;
-        ratings[9] = 4.8;
-        ratings[10] = 4.6;
-        ratings[11] = 4.2;
-        ratings[12] = 4.5;
-        ratings[13] = 4.7;
-        ratings[14] = 4.4;
-        ratings[15] = 4.3;
-        ratings[16] = 4.6;
-        ratings[17] = 4.5;
-        ratings[18] = 4.8;
-        ratings[19] = 4.7;
-        ratings[20] = 4.5;
-        ratings[21] = 4.6;
-        ratings[22] = 4.8;
-        ratings[23] = 4.4;
-        ratings[24] = 4.7;
-        
-        // Display product details
-        document.getElementById('detail-image').src = images[productId];
-        document.getElementById('detail-image').alt = products[productId];
-        document.getElementById('detail-name').textContent = products[productId];
-        document.getElementById('detail-price').textContent = 'Rp ' + prices[productId].toLocaleString('id-ID');
-        document.getElementById('detail-rating-number').textContent = ratings[productId];
-        document.getElementById('detail-description').textContent = descriptions[productId];
-        
-        // Generate stars
-        var fullStars = Math.floor(ratings[productId]);
-        var hasHalfStar = ratings[productId] % 1 >= 0.5;
-        var starsHTML = '';
-        
-        for(var j = 0; j < fullStars; j++) {
-            starsHTML += '<span class="star">★</span>';
+        if(product) {
+            // Map product data
+            var productName = isWanita ? product.nama : product.nama;
+            var kategori = isWanita ? product.kategori : product.kategori;
+            var material = isWanita ? product.material : product.material;
+            var warna = isWanita ? product.warna : product.warna;
+            var ukuran = isWanita ? product.ukuran : product.fit_ukuran;
+            var harga = isWanita ? product.harga : product.harga;
+            
+            // Get image path
+            var imagePath = isWanita ? 
+                'images/fashion-cewe/' + String(productId + 1).padStart(3, '0') + '.jpg' :
+                'images/fashion-cowo/' + String(productId + 1).padStart(3, '0') + '.jpg';
+            
+            // Get description
+            var description = getProductDescription(productName, isWanita);
+            
+            // Display product details
+            document.getElementById('detail-image').src = imagePath;
+            document.getElementById('detail-image').alt = productName;
+            document.getElementById('detail-name').textContent = productName;
+            document.getElementById('detail-price').textContent = 'Rp ' + harga.toLocaleString('id-ID');
+            document.getElementById('detail-kategori').textContent = kategori || '-';
+            document.getElementById('detail-material').textContent = material || '-';
+            document.getElementById('detail-warna').textContent = warna || '-';
+            document.getElementById('detail-ukuran').textContent = ukuran || '-';
+            document.getElementById('detail-description').textContent = description;
+            
+            // Generate rating (random between 4.0 - 4.9)
+            var rating = (4 + Math.random()).toFixed(1);
+            document.getElementById('detail-rating-number').textContent = rating;
+            
+            // Generate stars
+            var fullStars = Math.floor(rating);
+            var hasHalfStar = rating % 1 >= 0.5;
+            var starsHTML = '';
+            
+            for(var j = 0; j < fullStars; j++) {
+                starsHTML += '<span class="star">★</span>';
+            }
+            if(hasHalfStar) {
+                starsHTML += '<span class="star">★</span>';
+            }
+            for(var k = fullStars + (hasHalfStar ? 1 : 0); k < 5; k++) {
+                starsHTML += '<span class="star empty">★</span>';
+            }
+            
+            document.getElementById('detail-stars').innerHTML = starsHTML;
         }
-        if(hasHalfStar) {
-            starsHTML += '<span class="star">★</span>';
-        }
-        for(var k = fullStars + (hasHalfStar ? 1 : 0); k < 5; k++) {
-            starsHTML += '<span class="star empty">★</span>';
-        }
-        
-        document.getElementById('detail-stars').innerHTML = starsHTML;
     }
 </script>
 

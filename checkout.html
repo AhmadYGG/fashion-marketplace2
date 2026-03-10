@@ -40,6 +40,10 @@
                 <div class="checkout-items-section">
                     <h3>Pesanan Anda</h3>
                     <div id="checkout-items" class="checkout-items-list"></div>
+                    <div class="form-group">
+                        <label for="additional-notes">Catatan Tambahan</label>
+                        <textarea id="additional-notes" class="form-control" rows="3" placeholder="Contoh: Ukuran M, warna biru, dll"></textarea>
+                    </div>
                 </div>
 
                 <div class="checkout-address-section">
@@ -120,11 +124,12 @@
             return;
         }
         
+        var html = '';
         for(var i = 0; i < cart.length; i++) {
             var subtotal = cart[i].price * cart[i].quantity;
             total += subtotal;
             
-            summaryContainer.innerHTML += 
+            html += 
                 '<div class="summary-item">' +
                 '<span class="summary-item-name">' + cart[i].name + '</span>' +
                 '<span class="summary-item-qty">x' + cart[i].quantity + '</span>' +
@@ -132,6 +137,7 @@
                 '</div>';
         }
         
+        summaryContainer.innerHTML = html;
         document.getElementById('checkout-total').innerText = 'Rp ' + total.toLocaleString('id-ID');
         
         // Store total for success message
@@ -139,6 +145,7 @@
     }
     
     function processCheckout() {
+        var additionalNotes = document.getElementById('additional-notes').value.trim();
         var recipientName = document.getElementById('recipient-name').value.trim();
         var recipientPhone = document.getElementById('recipient-phone').value.trim();
         var recipientAddress = document.getElementById('recipient-address').value.trim();
@@ -192,11 +199,17 @@
                          'No. HP        : ' + recipientPhone + '\n' +
                          'Alamat        : ' + recipientAddress + '\n\n' +
                          '*Ekspedisi* : ' + expedition.toUpperCase() + '\n' +
-                         '*Metode Pembayaran* : ' + paymentMethod + '\n\n' +
-                         'Mohon info nomor rekening dan total ongkirnya ya Kak. Terima kasih!';
+                         '*Metode Pembayaran* : ' + paymentMethod + '\n\n';
+            
+            // Tambahkan catatan jika ada
+            if(additionalNotes) {
+                message += '*Catatan Tambahan* : ' + additionalNotes + '\n\n';
+            }
+            
+            message += 'Mohon info nomor rekening dan total ongkirnya ya Kak. Terima kasih!';
             
             // Redirect to WhatsApp
-            var whatsappNumber = '6281217224413';
+            var whatsappNumber = '6285143102063';
             var whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
             window.open(whatsappUrl, '_blank');
             
@@ -214,6 +227,7 @@
                     '<p style="margin: 8px 0; color: #666;">• No. HP: ' + recipientPhone + '</p>' +
                     '<p style="margin: 8px 0; color: #666;">• Ekspedisi: ' + expedition.toUpperCase() + '</p>' +
                     '<p style="margin: 8px 0; color: #666;">• Metode: ' + paymentMethod + '</p>' +
+                    (additionalNotes ? '<p style="margin: 8px 0; color: #666;">• Catatan: ' + additionalNotes + '</p>' : '') +
                     '</div>' +
                     '<p style="color: #666; font-size: 14px; margin: 15px 0;">📱 Silakan tunggu balasan dari admin kami di WhatsApp untuk konfirmasi dan detail pembayaran.</p>' +
                     '<p style="margin-top: 20px; color: #333;">Terima kasih telah berbelanja di Pinky Fashion Store! 🛍️</p>' +

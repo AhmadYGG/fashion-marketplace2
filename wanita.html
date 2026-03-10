@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script>
-        var currentPage = 1;
-    </script>
+    <script src="js/product-data.js"></script>
 </head>
 <body>
 
@@ -26,7 +24,6 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-         
     </div>
 </header>
 
@@ -48,111 +45,8 @@
     <main class="content">
         <h2>Produk Fashion Wanita</h2>
         
-        <div class="product-grid">
-            <script>
-                var productWanita = [];
-                var priceWanita = [];
-                var imageWanita = [];
-                var ratingWanita = [];
-                
-                productWanita[0] = "Tropical Summer Dress";
-                productWanita[1] = "Chic Vacation Blouse";
-                productWanita[2] = "Minimalist Mock-Neck Sweater";
-                productWanita[3] = "Aura Polka-Kiss Jumpsuit Set";
-                productWanita[4] = "Sahara Utility Jumpsuit";
-                productWanita[5] = "Luna Ribbed Knit Set";
-                productWanita[6] = "Victory Varsity Bomber Jacket";
-                productWanita[7] = "Noir High-Rise Flare Slacks";
-                productWanita[8] = "Artisan Stitch Tapered Trousers";
-                productWanita[9] = "Navy Executive Wide-Leg Trousers";
-                productWanita[10] = "Amara Satin Pleated Skirt";
-                productWanita[11] = "Peony Flared-Sleeve Blouse";
-                productWanita[12] = "Clara Essential Oxford Shirt";
-                productWanita[13] = "Retro-Vibe Denim Overalls";
-                productWanita[14] = "Nara Tiered Crinkle Dress";
-                productWanita[15] = "Valerie Navy Button-Down Midi Dress";
-                productWanita[16] = "Ziva Paisley Artistic Blouse";
-                productWanita[17] = "Aurelia Blossom Satin Dress";
-                productWanita[18] = "Elara Cottage Linen Dress";
-                productWanita[19] = "Sierra Urban Leather Jacket";
-                
-                priceWanita[0] = "249.000";
-                priceWanita[1] = "135.000";
-                priceWanita[2] = "165.000";
-                priceWanita[3] = "249.000";
-                priceWanita[4] = "249.000";
-                priceWanita[5] = "299.000";
-                priceWanita[6] = "165.000";
-                priceWanita[7] = "115.000";
-                priceWanita[8] = "99.000";
-                priceWanita[9] = "105.000";
-                priceWanita[10] = "125.000";
-                priceWanita[11] = "199.000";
-                priceWanita[12] = "105.000";
-                priceWanita[13] = "199.000";
-                priceWanita[14] = "249.000";
-                priceWanita[15] = "299.000";
-                priceWanita[16] = "129.000";
-                priceWanita[17] = "289.000";
-                priceWanita[18] = "249.000";
-                priceWanita[19] = "329.000";
-                
-                imageWanita[0] = "images/fashion-cewe/001.jpg";
-                imageWanita[1] = "images/fashion-cewe/002.jpg";
-                imageWanita[2] = "images/fashion-cewe/003.jpg";
-                imageWanita[3] = "images/fashion-cewe/004.jpg";
-                imageWanita[4] = "images/fashion-cewe/005.jpg";
-                imageWanita[5] = "images/fashion-cewe/006.jpg";
-                imageWanita[6] = "images/fashion-cewe/007.jpg";
-                imageWanita[7] = "images/fashion-cewe/008.jpg";
-                imageWanita[8] = "images/fashion-cewe/009.jpg";
-                imageWanita[9] = "images/fashion-cewe/010.jpg";
-                imageWanita[10] = "images/fashion-cewe/011.jpg";
-                imageWanita[11] = "images/fashion-cewe/012.jpg";
-                imageWanita[12] = "images/fashion-cewe/013.jpg";
-                imageWanita[13] = "images/fashion-cewe/014.jpg";
-                imageWanita[14] = "images/fashion-cewe/015.jpg";
-                imageWanita[15] = "images/fashion-cewe/016.jpg";
-                imageWanita[16] = "images/fashion-cewe/017.jpg";
-                imageWanita[17] = "images/fashion-cewe/018.jpg";
-                imageWanita[18] = "images/fashion-cewe/019.jpg";
-                imageWanita[19] = "images/fashion-cewe/020.jpg";
-                
-                ratingWanita[0] = 4.7;
-                ratingWanita[1] = 4.3;
-                ratingWanita[2] = 4.5;
-                ratingWanita[3] = 4.8;
-                ratingWanita[4] = 4.6;
-                ratingWanita[5] = 4.9;
-                ratingWanita[6] = 4.4;
-                ratingWanita[7] = 4.5;
-                ratingWanita[8] = 4.2;
-                ratingWanita[9] = 4.6;
-                ratingWanita[10] = 4.7;
-                ratingWanita[11] = 4.8;
-                ratingWanita[12] = 4.3;
-                ratingWanita[13] = 4.6;
-                ratingWanita[14] = 4.7;
-                ratingWanita[15] = 4.9;
-                ratingWanita[16] = 4.4;
-                ratingWanita[17] = 4.8;
-                ratingWanita[18] = 4.6;
-                ratingWanita[19] = 4.7;
-                
-                for(var i = 0; i < 20; i++){
-                    document.write("<div class='product-card' onclick='window.location.href=\"detail-product.html?id=" + i + "\"'>");
-                    document.write("<img src='" + imageWanita[i] + "' alt='" + productWanita[i] + "'>");
-                    document.write("<h3>" + productWanita[i] + "</h3>");
-                    document.write("<div class='product-footer'>");
-                    document.write("<p class='price'>Rp " + priceWanita[i] + "</p>");
-                    document.write("<div class='rating'>");
-                    document.write("<span class='star'>★</span>");
-                    document.write("<span class='rating-number'>" + ratingWanita[i] + "</span>");
-                    document.write("</div>");
-                    document.write("</div>");
-                    document.write("</div>");
-                }
-            </script>
+        <div class="product-grid" id="product-grid">
+            <!-- Products akan di-render oleh JavaScript -->
         </div>
     </main>
 </div>
@@ -161,5 +55,40 @@
     <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
 </footer>
 
+<script>
+    // Render produk wanita dari data
+    function renderProductsWanita() {
+        const gridContainer = document.getElementById('product-grid');
+        let html = '';
+        
+        productDataWanita.forEach((product, index) => {
+            const imagePath = 'images/fashion-cewe/' + String(index + 1).padStart(3, '0') + '.jpg';
+            const rating = (4 + Math.random()).toFixed(1);
+            
+            html += `
+                <div class="product-card" onclick="window.location.href='detail-product.html?id=${index}&type=wanita'">
+                    <img src="${imagePath}" alt="${product.nama}">
+                    <h3>${product.nama}</h3>
+                    <div class="product-footer">
+                        <p class="price">Rp ${product.harga.toLocaleString('id-ID')}</p>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="rating-number">${rating}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        gridContainer.innerHTML = html;
+    }
+    
+    // Render saat halaman load
+    document.addEventListener('DOMContentLoaded', function() {
+        renderProductsWanita();
+    });
+</script>
+
+    <script src="js/cart.js"></script>
 </body>
 </html>

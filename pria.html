@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script>
-        var currentPage = 1;
-    </script>
+    <script src="js/product-data.js"></script>
 </head>
 <body>
 <header>
@@ -25,7 +23,6 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-         
     </div>
 </header>
 
@@ -47,111 +44,8 @@
     <main class="content">
         <h2>Produk Fashion Pria</h2>
         
-        <div class="product-grid">
-            <script>
-                var productPria = [];
-                var pricePria = [];
-                var imagePria = [];
-                var ratingPria = [];
-                
-                productPria[0] = "Men's Carlo Casual Top";
-                productPria[1] = "Lamont Men's Top";
-                productPria[2] = "Ultra Shirt Men";
-                productPria[3] = "Chetwode Blue Casual Shirt";
-                productPria[4] = "Cardinal Kemeja Lengan Panjang Slim Fit";
-                productPria[5] = "Men's Carlo Casual Top Series 6";
-                productPria[6] = "Lamont Men's Top Series 7";
-                productPria[7] = "Ultra Shirt Men Series 8";
-                productPria[8] = "Chetwode Blue Casual Shirt Series 9";
-                productPria[9] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 10";
-                productPria[10] = "Men's Carlo Casual Top Series 11";
-                productPria[11] = "Lamont Men's Top Series 12";
-                productPria[12] = "Ultra Shirt Men Series 13";
-                productPria[13] = "Chetwode Blue Casual Shirt Series 14";
-                productPria[14] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 15";
-                productPria[15] = "Men's Carlo Casual Top Series 16";
-                productPria[16] = "Lamont Men's Top Series 17";
-                productPria[17] = "Ultra Shirt Men Series 18";
-                productPria[18] = "Chetwode Pink Casual Shirt Series 19";
-                productPria[19] = "Cardinal Kemeja Lengan Panjang Slim Fit Series 20";
-                
-                pricePria[0] = "185.000";
-                pricePria[1] = "225.000";
-                pricePria[2] = "275.000";
-                pricePria[3] = "195.000";
-                pricePria[4] = "219.000";
-                pricePria[5] = "245.000";
-                pricePria[6] = "265.000";
-                pricePria[7] = "299.000";
-                pricePria[8] = "189.000";
-                pricePria[9] = "235.000";
-                pricePria[10] = "199.000";
-                pricePria[11] = "249.000";
-                pricePria[12] = "285.000";
-                pricePria[13] = "179.000";
-                pricePria[14] = "259.000";
-                pricePria[15] = "215.000";
-                pricePria[16] = "239.000";
-                pricePria[17] = "269.000";
-                pricePria[18] = "205.000";
-                pricePria[19] = "229.000";
-                
-                imagePria[0] = "images/fashion-cowo/001.jpg";
-                imagePria[1] = "images/fashion-cowo/002.jpg";
-                imagePria[2] = "images/fashion-cowo/003.jpg";
-                imagePria[3] = "images/fashion-cowo/004.jpg";
-                imagePria[4] = "images/fashion-cowo/005.jpg";
-                imagePria[5] = "images/fashion-cowo/006.jpg";
-                imagePria[6] = "images/fashion-cowo/007.jpg";
-                imagePria[7] = "images/fashion-cowo/008.jpg";
-                imagePria[8] = "images/fashion-cowo/009.jpg";
-                imagePria[9] = "images/fashion-cowo/010.jpg";
-                imagePria[10] = "images/fashion-cowo/011.jpg";
-                imagePria[11] = "images/fashion-cowo/012.jpg";
-                imagePria[12] = "images/fashion-cowo/013.jpg";
-                imagePria[13] = "images/fashion-cowo/014.jpg";
-                imagePria[14] = "images/fashion-cowo/015.jpg";
-                imagePria[15] = "images/fashion-cowo/016.jpg";
-                imagePria[16] = "images/fashion-cowo/017.jpg";
-                imagePria[17] = "images/fashion-cowo/018.jpg";
-                imagePria[18] = "images/fashion-cowo/019.jpg";
-                imagePria[19] = "images/fashion-cowo/020.jpg";
-                
-                ratingPria[0] = 4.6;
-                ratingPria[1] = 4.4;
-                ratingPria[2] = 4.7;
-                ratingPria[3] = 4.5;
-                ratingPria[4] = 4.8;
-                ratingPria[5] = 4.3;
-                ratingPria[6] = 4.6;
-                ratingPria[7] = 4.9;
-                ratingPria[8] = 4.4;
-                ratingPria[9] = 4.7;
-                ratingPria[10] = 4.5;
-                ratingPria[11] = 4.6;
-                ratingPria[12] = 4.8;
-                ratingPria[13] = 4.3;
-                ratingPria[14] = 4.7;
-                ratingPria[15] = 4.5;
-                ratingPria[16] = 4.6;
-                ratingPria[17] = 4.4;
-                ratingPria[18] = 4.8;
-                ratingPria[19] = 4.7;
-                
-                for(var i = 0; i < 20; i++){
-                    document.write("<div class='product-card' onclick='window.location.href=\"detail-product.html?id=" + (i + 5) + "\"'>");
-                    document.write("<img src='" + imagePria[i] + "' alt='" + productPria[i] + "'>");
-                    document.write("<h3>" + productPria[i] + "</h3>");
-                    document.write("<div class='product-footer'>");
-                    document.write("<p class='price'>Rp " + pricePria[i] + "</p>");
-                    document.write("<div class='rating'>");
-                    document.write("<span class='star'>★</span>");
-                    document.write("<span class='rating-number'>" + ratingPria[i] + "</span>");
-                    document.write("</div>");
-                    document.write("</div>");
-                    document.write("</div>");
-                }
-            </script>
+        <div class="product-grid" id="product-grid">
+            <!-- Products akan di-render oleh JavaScript -->
         </div>
     </main>
 </div>
@@ -160,5 +54,40 @@
     <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
 </footer>
 
+<script>
+    // Render produk pria dari data
+    function renderProductsPria() {
+        const gridContainer = document.getElementById('product-grid');
+        let html = '';
+        
+        productDataPria.forEach((product, index) => {
+            const imagePath = 'images/fashion-cowo/' + String(index + 1).padStart(3, '0') + '.jpg';
+            const rating = (4 + Math.random()).toFixed(1);
+            
+            html += `
+                <div class="product-card" onclick="window.location.href='detail-product.html?id=${index}&type=pria'">
+                    <img src="${imagePath}" alt="${product.nama}">
+                    <h3>${product.nama}</h3>
+                    <div class="product-footer">
+                        <p class="price">Rp ${product.harga.toLocaleString('id-ID')}</p>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="rating-number">${rating}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        gridContainer.innerHTML = html;
+    }
+    
+    // Render saat halaman load
+    document.addEventListener('DOMContentLoaded', function() {
+        renderProductsPria();
+    });
+</script>
+
+    <script src="js/cart.js"></script>
 </body>
 </html>
