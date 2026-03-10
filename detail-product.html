@@ -94,7 +94,6 @@
 
 <script src="js/product-data.js"></script>
 <script>
-    // Get product data from URL parameters
     function getUrlParameter(name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -102,17 +101,14 @@
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
     
-    // Get product ID and type from URL
     var productId = parseInt(getUrlParameter('id'));
-    var productType = getUrlParameter('type') || 'wanita'; // default: wanita
+    var productType = getUrlParameter('type') || 'wanita';
     var isWanita = productType === 'wanita';
     
     if(productId || productId === 0) {
-        // Get product data
         var product = getProductById(productId, isWanita);
         
         if(product) {
-            // Map product data
             var productName = isWanita ? product.nama : product.nama;
             var kategori = isWanita ? product.kategori : product.kategori;
             var material = isWanita ? product.material : product.material;
@@ -120,15 +116,12 @@
             var ukuran = isWanita ? product.ukuran : product.fit_ukuran;
             var harga = isWanita ? product.harga : product.harga;
             
-            // Get image path
             var imagePath = isWanita ? 
                 'images/fashion-cewe/' + String(productId + 1).padStart(3, '0') + '.webp' :
                 'images/fashion-cowo/' + String(productId + 1).padStart(3, '0') + '.webp';
             
-            // Get description
             var description = getProductDescription(productName, isWanita);
             
-            // Display product details
             document.getElementById('detail-image').src = imagePath;
             document.getElementById('detail-image').alt = productName;
             document.getElementById('detail-name').textContent = productName;
@@ -139,11 +132,9 @@
             document.getElementById('detail-ukuran').textContent = ukuran || '-';
             document.getElementById('detail-description').textContent = description;
             
-            // Generate rating (random between 4.0 - 4.9)
             var rating = (4 + Math.random()).toFixed(1);
             document.getElementById('detail-rating-number').textContent = rating;
             
-            // Generate stars
             var fullStars = Math.floor(rating);
             var hasHalfStar = rating % 1 >= 0.5;
             var starsHTML = '';

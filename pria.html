@@ -55,7 +55,6 @@
 </footer>
 
 <script>
-    // Render produk pria dari data
     function renderProductsPria() {
         const gridContainer = document.getElementById('product-grid');
         let html = '';
@@ -82,7 +81,6 @@
         gridContainer.innerHTML = html;
     }
     
-    // Render saat halaman load
     document.addEventListener('DOMContentLoaded', function() {
         renderProductsPria();
     });

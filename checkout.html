@@ -112,7 +112,6 @@
 
 <script>
     function loadOrderSummary() {
-        // Ambil data keranjang dari localStorage
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         var summaryContainer = document.getElementById('checkout-summary-items');
         var total = 0;
@@ -140,7 +139,6 @@
         summaryContainer.innerHTML = html;
         document.getElementById('checkout-total').innerText = 'Rp ' + total.toLocaleString('id-ID');
         
-        // Store total for success message
         window.orderTotal = total;
     }
     
@@ -176,17 +174,14 @@
             var paymentMethod = selectedPayment.nextElementSibling.innerText;
             var totalFormatted = 'Rp ' + window.orderTotal.toLocaleString('id-ID');
             
-            // Ambil data keranjang dari localStorage
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             
-            // Build order items list
             var itemsList = '';
             for(var i = 0; i < cart.length; i++) {
                 var subtotal = cart[i].price * cart[i].quantity;
                 itemsList += (i + 1) + '. ' + cart[i].name + ' (x' + cart[i].quantity + ') = Rp ' + subtotal.toLocaleString('id-ID') + '\n';
             }
             
-            // Build WhatsApp message dengan format yang lebih baik
             var message = 'Halo Kak, saya ingin memesan produk berikut:\n\n' +
                          '*DETAIL PESANAN*\n' +
                          '━━━━━━━━━━━━━━━━━━━━━━\n' + 
@@ -201,27 +196,24 @@
                          '*Ekspedisi* : ' + expedition.toUpperCase() + '\n' +
                          '*Metode Pembayaran* : ' + paymentMethod + '\n\n';
             
-            // Tambahkan catatan jika ada
             if(additionalNotes) {
                 message += '*Catatan Tambahan* : ' + additionalNotes + '\n\n';
             }
             
             message += 'Mohon info nomor rekening dan total ongkirnya ya Kak. Terima kasih!';
             
-            // Redirect to WhatsApp
             var whatsappNumber = '6285143102063';
             var whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
             window.open(whatsappUrl, '_blank');
             
-            // Show success message
             setTimeout(function() {
                 var checkoutMain = document.querySelector('.checkout-main');
                 checkoutMain.innerHTML = 
                     '<div class="success-notification" style="margin-top: 0;">' +
-                    '<h3>✅ PESANAN BERHASIL DIKIRIM KE WHATSAPP!</h3>' +
+                    '<h3>PESANAN BERHASIL DIKIRIM KE WHATSAPP!</h3>' +
                     '<p style="font-size: 16px; margin: 20px 0; color: #666;">Pesanan Anda telah dikirim ke WhatsApp admin kami.</p>' +
                     '<div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: left;">' +
-                    '<p style="margin: 0 0 15px 0; font-weight: 600; color: #333;"><strong>📋 Ringkasan Pesanan:</strong></p>' +
+                    '<p style="margin: 0 0 15px 0; font-weight: 600; color: #333;"><strong>Ringkasan Pesanan:</strong></p>' +
                     '<p style="margin: 8px 0; color: #666;">• Total: ' + totalFormatted + '</p>' +
                     '<p style="margin: 8px 0; color: #666;">• Penerima: ' + recipientName + '</p>' +
                     '<p style="margin: 8px 0; color: #666;">• No. HP: ' + recipientPhone + '</p>' +
@@ -229,8 +221,8 @@
                     '<p style="margin: 8px 0; color: #666;">• Metode: ' + paymentMethod + '</p>' +
                     (additionalNotes ? '<p style="margin: 8px 0; color: #666;">• Catatan: ' + additionalNotes + '</p>' : '') +
                     '</div>' +
-                    '<p style="color: #666; font-size: 14px; margin: 15px 0;">📱 Silakan tunggu balasan dari admin kami di WhatsApp untuk konfirmasi dan detail pembayaran.</p>' +
-                    '<p style="margin-top: 20px; color: #333;">Terima kasih telah berbelanja di Pinky Fashion Store! 🛍️</p>' +
+                    '<p style="color: #666; font-size: 14px; margin: 15px 0;">Silakan tunggu balasan dari admin kami di WhatsApp untuk konfirmasi dan detail pembayaran.</p>' +
+                    '<p style="margin-top: 20px; color: #333;">Terima kasih telah berbelanja di Pinky Fashion Store!</p>' +
                     '</div>';
                 
                 var summaryCard = document.querySelector('.checkout-summary-card');

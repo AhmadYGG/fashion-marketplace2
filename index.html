@@ -60,7 +60,6 @@
     var images = [];
     var ratings = [];
     
-    // Produk Wanita
     products[0] = "Tropical Summer Dress";
     products[1] = "Chic Vacation Blouse";
     products[2] = "Luna Ribbed Knit Set";
@@ -79,7 +78,6 @@
     images[3] = "images/fashion-cewe/008.webp";
     images[4] = "images/fashion-cewe/018.webp";
     
-    // Produk Pria
     products[5] = "Men's Carlo Casual Top";
     products[6] = "Ultra Shirt Men";
     products[7] = "Chetwode Blue Casual Shirt";
@@ -98,7 +96,6 @@
     images[8] = "images/fashion-cowo/007.webp";
     images[9] = "images/fashion-cowo/010.webp";
 
-    // Produk Tambahan Wanita
     products[10] = "Elegant Evening Gown";
     products[11] = "Casual Denim Jacket";
     products[12] = "Floral Maxi Skirt";
@@ -117,7 +114,6 @@
     images[13] = "images/fashion-cewe/007.webp";
     images[14] = "images/fashion-cewe/009.webp";
     
-    // Produk Tambahan Pria
     products[15] = "Classic Polo Shirt";
     products[16] = "Slim Fit Chinos";
     products[17] = "Leather Belt Premium";
@@ -136,7 +132,6 @@
     images[18] = "images/fashion-cowo/008.webp";
     images[19] = "images/fashion-cowo/009.webp";
     
-    // Ratings (out of 5)
     ratings[0] = 4.7;
     ratings[1] = 4.3;
     ratings[2] = 4.8;
@@ -159,14 +154,13 @@
     ratings[19] = 4.7;
 
     var currentPage = 1;
-    var itemsPerPage = 20; // Show all products
+    var itemsPerPage = 20;
     var totalPages = Math.ceil(products.length / itemsPerPage);
 
     function displayProducts(page) {
         var container = document.getElementById('product-container');
         container.innerHTML = '';
         
-        // Display all products
         for(var i = 0; i < products.length; i++) {
             var productCard = document.createElement('div');
             productCard.className = 'product-card';
@@ -190,7 +184,6 @@
         }
     }
 
-    // Initialize - no pagination needed
     displayProducts(1);
 </script>
 
