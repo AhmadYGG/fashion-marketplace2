@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cara Belanja - Pinky Fashion Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
@@ -20,7 +23,6 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-        <a href="login.html">Login</a>
     </div>
 </header>
 
@@ -29,70 +31,174 @@
 </section>
 
 <div class="container">
-    <aside class="sidebar">
-        <h3>Kategori</h3>
-        <ul>
-            <li><a href="index.html">Produk Terbaru</a></li>
-            <li><a href="pria.html">Fashion Pria</a></li>
-            <li><a href="wanita.html">Fashion Wanita</a></li>
-            <li><a href="promo.html">Produk Promo</a></li>
-        </ul>
-    </aside>
+    <main class="content" style="max-width: 100%; margin-left: 0;">
+        <div class="shopping-guide-container">
+            <div class="guide-header">
+                <h1>Panduan Belanja</h1>
+                <p>Belanja dengan mudah dan aman di Pinky Fashion Store</p>
+            </div>
 
-    <main class="content">
-        <h2>Cara Belanja di Pinky Fashion Store</h2>
-        
-        <p class="lead">Belanja di Pinky Fashion Store sangat mudah! Ikuti langkah-langkah berikut:</p>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Jelajahi Koleksi</h3>
+                        <p>Temukan koleksi fashion terbaru kami di halaman Beranda, Fashion Pria, atau Fashion Wanita. Setiap produk dipilih dengan cermat untuk memastikan kualitas terbaik.</p>
+                        <a href="index.html" class="step-link">Lihat Koleksi →</a>
+                    </div>
+                </div>
 
-        <h3>Langkah 1: Pilih Produk</h3>
-        <p>Lihat koleksi produk kami di halaman <a href="index.html">Beranda</a>, <a href="pria.html">Fashion Pria</a>, atau <a href="wanita.html">Fashion Wanita</a>. Klik tombol "Masukkan Keranjang" pada produk yang Anda inginkan.</p>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Tambahkan ke Keranjang</h3>
+                        <p>Pilih produk yang Anda sukai dan klik tombol "Masukkan Keranjang". Anda dapat menambahkan beberapa produk sekaligus sebelum melanjutkan ke checkout.</p>
+                    </div>
+                </div>
 
-        <h3>Langkah 2: Cek Keranjang Belanja</h3>
-        <p>Buka halaman <a href="keranjang.html">Keranjang</a> untuk melihat produk yang sudah Anda pilih. Pastikan produk dan jumlahnya sudah sesuai.</p>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Periksa Keranjang</h3>
+                        <p>Buka halaman Keranjang untuk melihat semua produk pilihan Anda. Anda dapat mengubah jumlah, menghapus produk, atau melanjutkan berbelanja sesuai kebutuhan.</p>
+                        <a href="keranjang.html" class="step-link">Buka Keranjang →</a>
+                    </div>
+                </div>
 
-        <h3>Langkah 3: Checkout</h3>
-        <p>Klik tombol "Checkout" untuk melanjutkan ke halaman pembayaran. Isi data diri dan alamat pengiriman dengan lengkap.</p>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Isi Data Pengiriman</h3>
+                        <p>Masukkan nama penerima, nomor HP, alamat lengkap, dan pilih ekspedisi pengiriman. Pastikan semua data terisi dengan benar untuk memastikan pengiriman lancar.</p>
+                    </div>
+                </div>
 
-        <h3>Langkah 4: Pilih Metode Pembayaran</h3>
-        <p>Pilih metode pembayaran yang Anda inginkan:</p>
-        <ul>
-            <li>Transfer Bank</li>
-            <li>E-Wallet (GoPay, OVO, Dana)</li>
-            <li>Kartu Kredit/Debit</li>
-            <li>Cash on Delivery (COD)</li>
-        </ul>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Pilih Metode Pembayaran</h3>
+                        <p>Pilih metode pembayaran yang paling sesuai untuk Anda dari berbagai pilihan yang tersedia.</p>
+                    </div>
+                </div>
 
-        <h3>Langkah 5: Lakukan Pembayaran</h3>
-        <p class="text-warning">Lakukan pembayaran maksimal 24 jam setelah pemesanan. Jika menggunakan transfer bank, kirim bukti transfer ke WhatsApp kami di 0812-3456-7890.</p>
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Konfirmasi Pesanan</h3>
+                        <p>Pesanan Anda akan dikirim langsung ke WhatsApp admin kami. Tunggu konfirmasi dari admin untuk detail pembayaran dan informasi pengiriman lebih lanjut.</p>
+                    </div>
+                </div>
+            </div>
 
-        <h3>Langkah 6: Pesanan Diproses</h3>
-        <p class="text-success">Setelah pembayaran dikonfirmasi, pesanan Anda akan segera diproses dan dikirim sesuai alamat yang Anda berikan.</p>
+            <div class="payment-methods-section">
+                <h2>Metode Pembayaran</h2>
+                <div class="payment-grid">
+                    <div class="payment-card">
+                        <div class="payment-icon">🏦</div>
+                        <h4>Transfer Bank</h4>
+                        <p>Transfer langsung ke rekening bank kami. Konfirmasi pembayaran akan diproses dalam 1-2 jam kerja.</p>
+                    </div>
+                    <div class="payment-card">
+                        <div class="payment-icon">🚚</div>
+                        <h4>Cash on Delivery</h4>
+                        <p>Bayar langsung saat barang tiba di tangan Anda. Tersedia untuk area tertentu dengan biaya tambahan.</p>
+                    </div>
+                    <div class="payment-card">
+                        <div class="payment-icon">📱</div>
+                        <h4>QRIS</h4>
+                        <p>Scan kode QRIS untuk pembayaran instan. Metode pembayaran digital yang cepat dan aman.</p>
+                    </div>
+                </div>
+            </div>
 
-        <br> <br>
+            <div class="shipping-section">
+                <h2>Pilihan Pengiriman</h2>
+                <div class="shipping-grid">
+                    <div class="shipping-card">
+                        <h4>JNE</h4>
+                        <p>Pengiriman ke seluruh Indonesia dengan tracking real-time</p>
+                    </div>
+                    <div class="shipping-card">
+                        <h4>TIKI</h4>
+                        <p>Layanan pengiriman terpercaya dengan jaminan keamanan barang</p>
+                    </div>
+                    <div class="shipping-card">
+                        <h4>POS Indonesia</h4>
+                        <p>Jangkauan luas ke seluruh nusantara dengan harga terjangkau</p>
+                    </div>
+                    <div class="shipping-card">
+                        <h4>Grab Express</h4>
+                        <p>Pengiriman cepat untuk area perkotaan dalam 1-2 hari</p>
+                    </div>
+                    <div class="shipping-card">
+                        <h4>GoJek</h4>
+                        <p>Pengiriman kilat untuk kebutuhan mendesak di kota besar</p>
+                    </div>
+                </div>
+            </div>
 
-        <h3>Tips Belanja</h3>
-        <table class="table">
-            <tr class="info">
-                <td>1</td>
-                <td>Daftar akun untuk mendapatkan promo khusus member</td>
-            </tr>
-            <tr class="info">
-                <td>2</td>
-                <td>Cek halaman <a href="promo.html">Promo</a> untuk mendapatkan diskon menarik</td>
-            </tr>
-            <tr class="info">
-                <td>3</td>
-                <td>Gunakan kode voucher saat checkout untuk potongan harga</td>
-            </tr>
-            <tr class="info">
-                <td>4</td>
-                <td>Belanja minimal Rp 500.000 untuk gratis ongkir</td>
-            </tr>
-        </table>
+            <div class="tips-section">
+                <h2>Tips Belanja Cerdas</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-number">1</div>
+                        <div class="tip-content">
+                            <h4>Periksa Detail Produk</h4>
+                            <p>Baca deskripsi produk dengan teliti, termasuk ukuran, bahan, dan warna untuk memastikan sesuai dengan kebutuhan Anda.</p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">2</div>
+                        <div class="tip-content">
+                            <h4>Manfaatkan Promo</h4>
+                            <p>Kunjungi halaman Promo secara berkala untuk mendapatkan diskon menarik dan penawaran eksklusif.</p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">3</div>
+                        <div class="tip-content">
+                            <h4>Verifikasi Data</h4>
+                            <p>Pastikan semua data pengiriman sudah benar sebelum mengirim pesanan untuk menghindari kesalahan pengiriman.</p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">4</div>
+                        <div class="tip-content">
+                            <h4>Hubungi Admin</h4>
+                            <p>Jika ada pertanyaan atau kendala, jangan ragu untuk menghubungi admin kami melalui WhatsApp atau halaman Kontak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <br> <br>
+            <div class="faq-section">
+                <h2>Pertanyaan Umum</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h4>Berapa lama proses pengiriman?</h4>
+                        <p>Waktu pengiriman tergantung pada ekspedisi yang dipilih dan lokasi tujuan. Umumnya berkisar 2-7 hari kerja setelah pembayaran dikonfirmasi.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Apakah ada biaya tambahan?</h4>
+                        <p>Biaya pengiriman (ongkir) akan dikonfirmasi oleh admin setelah Anda mengirim pesanan. Tidak ada biaya tersembunyi lainnya.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Bagaimana jika barang rusak saat pengiriman?</h4>
+                        <p>Hubungi admin kami segera dengan bukti foto. Kami akan membantu proses klaim atau penggantian barang.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Apakah ada kebijakan pengembalian?</h4>
+                        <p>Silakan kunjungi halaman Kebijakan untuk informasi lengkap tentang kebijakan pengembalian dan penukaran produk.</p>
+                    </div>
+                </div>
+            </div>
 
-        <p class="text-center">Butuh bantuan? Hubungi kami di halaman <a href="kontak.html">Kontak</a></p>
+            <div class="contact-cta">
+                <h2>Masih Ada Pertanyaan?</h2>
+                <p>Tim customer service kami siap membantu Anda 24/7</p>
+                <a href="kontak.html" class="cta-button">Hubungi Kami</a>
+            </div>
+        </div>
     </main>
 </div>
 

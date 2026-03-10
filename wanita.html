@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk Wanita - Pinky Fashion Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
@@ -23,7 +26,7 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-        <a href="login.html">Login</a>
+         
     </div>
 </header>
 
@@ -33,7 +36,7 @@
 
 <div class="container">
     <aside class="sidebar">
-        <h3>Kategori</h3>
+        <h3>Kategori Fashion</h3>
         <ul>
             <li><a href="index.html">Produk Terbaru</a></li>
             <li><a href="pria.html">Fashion Pria</a></li>
@@ -50,6 +53,7 @@
                 var productWanita = [];
                 var priceWanita = [];
                 var imageWanita = [];
+                var ratingWanita = [];
                 
                 productWanita[0] = "Tropical Summer Dress";
                 productWanita[1] = "Chic Vacation Blouse";
@@ -114,12 +118,38 @@
                 imageWanita[18] = "images/fashion-cewe/019.jpg";
                 imageWanita[19] = "images/fashion-cewe/020.jpg";
                 
+                ratingWanita[0] = 4.7;
+                ratingWanita[1] = 4.3;
+                ratingWanita[2] = 4.5;
+                ratingWanita[3] = 4.8;
+                ratingWanita[4] = 4.6;
+                ratingWanita[5] = 4.9;
+                ratingWanita[6] = 4.4;
+                ratingWanita[7] = 4.5;
+                ratingWanita[8] = 4.2;
+                ratingWanita[9] = 4.6;
+                ratingWanita[10] = 4.7;
+                ratingWanita[11] = 4.8;
+                ratingWanita[12] = 4.3;
+                ratingWanita[13] = 4.6;
+                ratingWanita[14] = 4.7;
+                ratingWanita[15] = 4.9;
+                ratingWanita[16] = 4.4;
+                ratingWanita[17] = 4.8;
+                ratingWanita[18] = 4.6;
+                ratingWanita[19] = 4.7;
+                
                 for(var i = 0; i < 20; i++){
-                    document.write("<div class='product-card'>");
+                    document.write("<div class='product-card' onclick='window.location.href=\"detail-product.html?id=" + i + "\"'>");
                     document.write("<img src='" + imageWanita[i] + "' alt='" + productWanita[i] + "'>");
                     document.write("<h3>" + productWanita[i] + "</h3>");
-                    document.write("<p>Rp " + priceWanita[i] + "</p>");
-                    document.write("<button onclick='window.location.href=\"keranjang.html\"'>Masukkan Keranjang</button>");
+                    document.write("<div class='product-footer'>");
+                    document.write("<p class='price'>Rp " + priceWanita[i] + "</p>");
+                    document.write("<div class='rating'>");
+                    document.write("<span class='star'>★</span>");
+                    document.write("<span class='rating-number'>" + ratingWanita[i] + "</span>");
+                    document.write("</div>");
+                    document.write("</div>");
                     document.write("</div>");
                 }
             </script>

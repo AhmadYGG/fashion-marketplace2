@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinky Fashion Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
@@ -20,7 +23,7 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-        <a href="login.html">Login</a>
+         
     </div>
 </header>
 
@@ -30,7 +33,7 @@
 
 <div class="container">
     <aside class="sidebar">
-        <h3>Kategori</h3>
+        <h3>Kategori Fashion</h3>
         <ul>
             <li><a href="index.html">Produk Terbaru</a></li>
             <li><a href="pria.html">Fashion Pria</a></li>
@@ -55,6 +58,7 @@
     var products = [];
     var prices = [];
     var images = [];
+    var ratings = [];
     
     // Produk Wanita
     products[0] = "Tropical Summer Dress";
@@ -131,6 +135,28 @@
     images[17] = "images/fashion-cowo/006.jpg";
     images[18] = "images/fashion-cowo/008.jpg";
     images[19] = "images/fashion-cowo/009.jpg";
+    
+    // Ratings (out of 5)
+    ratings[0] = 4.7;
+    ratings[1] = 4.3;
+    ratings[2] = 4.8;
+    ratings[3] = 4.5;
+    ratings[4] = 4.9;
+    ratings[5] = 4.6;
+    ratings[6] = 4.4;
+    ratings[7] = 4.7;
+    ratings[8] = 4.5;
+    ratings[9] = 4.8;
+    ratings[10] = 4.6;
+    ratings[11] = 4.2;
+    ratings[12] = 4.5;
+    ratings[13] = 4.7;
+    ratings[14] = 4.4;
+    ratings[15] = 4.3;
+    ratings[16] = 4.6;
+    ratings[17] = 4.5;
+    ratings[18] = 4.8;
+    ratings[19] = 4.7;
 
     var currentPage = 1;
     var itemsPerPage = 20; // Show all products
@@ -144,11 +170,22 @@
         for(var i = 0; i < products.length; i++) {
             var productCard = document.createElement('div');
             productCard.className = 'product-card';
+            productCard.onclick = (function(index) {
+                return function() {
+                    window.location.href = 'detail-product.html?id=' + index;
+                };
+            })(i);
+            
             productCard.innerHTML = 
                 "<img src='" + images[i] + "' alt='" + products[i] + "'>" +
                 "<h3>" + products[i] + "</h3>" +
-                "<p>Rp " + prices[i] + "</p>" +
-                "<button onclick=\"window.location.href='keranjang.html'\">Masukkan Keranjang</button>";
+                "<div class='product-footer'>" +
+                "<p class='price'>Rp " + prices[i] + "</p>" +
+                "<div class='rating'>" +
+                "<span class='star'>★</span>" +
+                "<span class='rating-number'>" + ratings[i] + "</span>" +
+                "</div>" +
+                "</div>";
             container.appendChild(productCard);
         }
     }

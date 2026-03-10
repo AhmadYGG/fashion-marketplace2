@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Pinky Fashion Store</title>
+    <title>Kontak - Pinky Fashion Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
@@ -20,7 +23,6 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-        <a href="login.html">Login</a>
     </div>
 </header>
 
@@ -29,38 +31,132 @@
 </section>
 
 <div class="container">
-    <aside class="sidebar">
-        <h3>Kategori</h3>
-        <ul>
-            <li><a href="index.html">Produk Terbaru</a></li>
-            <li><a href="pria.html">Fashion Pria</a></li>
-            <li><a href="wanita.html">Fashion Wanita</a></li>
-            <li><a href="promo.html">Produk Promo</a></li>
-        </ul>
-    </aside>
+    <main class="content" style="max-width: 100%; margin-left: 0;">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Hubungi Kami</h1>
+                <p>Tim customer service kami siap membantu Anda 24/7</p>
+            </div>
 
-    <main class="content">
-        <h2>Informasi Kontak</h2>
-        
-        <div class="contact-info">
-            <p><strong>Nama Store:</strong> Pinky Fashion Store</p>
-            <p><strong>Alamat:</strong> Jl. Mawar No.12, Sukorejo, Kec. Sukorejo, Kota Blitar, Jawa Timur 66133</p>
-            <p><strong>No HP:</strong> 0812-3456-7890</p>
-            <p><strong>Email:</strong> pinkystore@example.com</p>
-            <p><strong>Instagram:</strong> @pinkystore</p>
-        </div>
+            <div class="contact-content">
+                <div class="contact-info-section">
+                    <h2>Informasi Kontak</h2>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <h3>WhatsApp</h3>
+                            <p class="contact-label">Hubungi kami via WhatsApp</p>
+                            <a href="https://wa.me/6281217224413" class="contact-link">0812-1722-4413</a>
+                        </div>
 
-        <div class="map-container">
-            <h3>Lokasi Kami</h3>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.024132310009!2d112.15573877464688!3d-8.099020991929752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ec102f454025%3A0xda411bca92e459eb!2sPASAR%20LEGI%20KOTA%20BLITAR!5e0!3m2!1sid!2sid!4v1771157642716!5m2!1sid!2sid" 
-                width="100%" 
-                height="400" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <h3>Email</h3>
+                            <p class="contact-label">Kirim email ke kami</p>
+                            <a href="mailto:info@pinkyfashionstore.com" class="contact-link">info@pinkyfashionstore.com</a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <h3>Alamat</h3>
+                            <p class="contact-label">Kunjungi toko kami</p>
+                            <p class="contact-address">Jl. Mawar No.12, Sukorejo, Kec. Sukorejo, Kota Blitar, Jawa Timur 66133</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">🕐</div>
+                            <h3>Jam Operasional</h3>
+                            <p class="contact-label">Senin - Jumat</p>
+                            <p class="contact-time">09:00 - 17:00 WIB</p>
+                            <p class="contact-label" style="margin-top: 10px;">Sabtu - Minggu</p>
+                            <p class="contact-time">10:00 - 16:00 WIB</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <h3>Instagram</h3>
+                            <p class="contact-label">Follow media sosial kami</p>
+                            <a href="https://instagram.com/pinkyfashionstore" class="contact-link">@pinkyfashionstore</a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">🏪</div>
+                            <h3>Toko Fisik</h3>
+                            <p class="contact-label">Kunjungi toko kami langsung</p>
+                            <p class="contact-address">Pinky Fashion Store<br>Blitar, Jawa Timur</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>Kirim Pesan</h2>
+                    <form class="contact-form" onsubmit="handleContactForm(event)">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Masukkan email Anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Nomor HP</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Masukkan nomor HP Anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Masukkan subjek pesan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <h2>Lokasi Kami</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.024132310009!2d112.15573877464688!3d-8.099020991929752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ec102f454025%3A0xda411bca92e459eb!2sPASAR%20LEGI%20KOTA%20BLITAR!5e0!3m2!1sid!2sid!4v1771157642716!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="faq-quick-section">
+                <h2>Pertanyaan Umum</h2>
+                <div class="faq-quick-grid">
+                    <div class="faq-quick-item">
+                        <h4>Berapa lama respon dari admin?</h4>
+                        <p>Kami biasanya merespon dalam 1-2 jam pada jam kerja. Untuk pertanyaan di luar jam kerja, kami akan merespon di hari kerja berikutnya.</p>
+                    </div>
+                    <div class="faq-quick-item">
+                        <h4>Apakah ada live chat?</h4>
+                        <p>Saat ini kami melayani melalui WhatsApp, Email, dan form kontak. Hubungi kami melalui salah satu channel tersebut.</p>
+                    </div>
+                    <div class="faq-quick-item">
+                        <h4>Bagaimana cara komplain?</h4>
+                        <p>Silakan hubungi kami melalui WhatsApp atau email dengan menyertakan bukti pembelian dan foto barang yang bermasalah.</p>
+                    </div>
+                    <div class="faq-quick-item">
+                        <h4>Apakah ada customer service offline?</h4>
+                        <p>Ya, Anda bisa mengunjungi toko fisik kami di Blitar pada jam operasional yang telah ditentukan.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </div>
@@ -68,6 +164,26 @@
 <footer>
     <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
 </footer>
+
+<script>
+    function handleContactForm(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        const whatsappMessage = `Halo, saya ingin menghubungi Pinky Fashion Store.\n\nNama: ${name}\nEmail: ${email}\nNo. HP: ${phone}\nSubjek: ${subject}\n\nPesan:\n${message}`;
+        
+        const whatsappUrl = 'https://wa.me/6281217224413?text=' + encodeURIComponent(whatsappMessage);
+        window.open(whatsappUrl, '_blank');
+        
+        document.querySelector('.contact-form').reset();
+        alert('Pesan Anda akan dikirim ke WhatsApp kami. Terima kasih!');
+    }
+</script>
 
 </body>
 </html>

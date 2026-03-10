@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keranjang - Pinky Fashion Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
@@ -20,7 +23,7 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-        <a href="login.html">Login</a>
+         
     </div>
 </header>
 
@@ -29,71 +32,25 @@
 </section>
 
 <div class="container">
-    <aside class="sidebar">
-        <h3>Kategori</h3>
-        <ul>
-            <li><a href="index.html">Produk Terbaru</a></li>
-            <li><a href="pria.html">Fashion Pria</a></li>
-            <li><a href="wanita.html">Fashion Wanita</a></li>
-            <li><a href="promo.html">Produk Promo</a></li>
-        </ul>
-    </aside>
-
-    <main class="content">
-        <h2>Isi Keranjang</h2>
-        
-        <div class="cart-container">
-            <div class="cart-item">
-                <img src="images/fashion-cewe/001.jpg" alt="Tropical Summer Dress">
-                <div class="cart-item-info">
-                    <h3>Tropical Summer Dress</h3>
-                    <p class="cart-price">Rp 249.000</p>
-                    <p class="cart-qty">Jumlah: 1</p>
-                </div>
-                <div class="cart-item-subtotal">
-                    <p>Rp 249.000</p>
+    <main class="content" style="max-width: 100%; margin-left: 0;">
+        <div class="cart-wrapper">
+            <div class="cart-main">
+                <h2>Keranjang Belanja</h2>
+                <div class="cart-container" id="cart-container">
+                    <!-- Cart items akan di-render oleh JavaScript -->
                 </div>
             </div>
 
-            <div class="cart-item">
-                <img src="images/fashion-cewe/006.jpg" alt="Luna Ribbed Knit Set">
-                <div class="cart-item-info">
-                    <h3>Luna Ribbed Knit Set</h3>
-                    <p class="cart-price">Rp 299.000</p>
-                    <p class="cart-qty">Jumlah: 1</p>
+            <div class="cart-summary-card">
+                <h3>Ringkasan</h3>
+                <div id="cart-summary-items"></div>
+                <div class="cart-summary-divider"></div>
+                <div class="cart-summary-total">
+                    <span>Total</span>
+                    <span id="cart-total-amount" class="total-amount">Rp 0</span>
                 </div>
-                <div class="cart-item-subtotal">
-                    <p>Rp 299.000</p>
-                </div>
-            </div>
-
-            <div class="cart-item">
-                <img src="images/fashion-cewe/002.jpg" alt="Chic Vacation Blouse">
-                <div class="cart-item-info">
-                    <h3>Chic Vacation Blouse</h3>
-                    <p class="cart-price">Rp 135.000</p>
-                    <p class="cart-qty">Jumlah: 1</p>
-                </div>
-                <div class="cart-item-subtotal">
-                    <p>Rp 135.000</p>
-                </div>
-            </div>
-
-            <div class="cart-item">
-                <img src="images/fashion-cowo/005.jpg" alt="Cardinal Kemeja Lengan Panjang Slim Fit">
-                <div class="cart-item-info">
-                    <h3>Cardinal Kemeja Lengan Panjang Slim Fit</h3>
-                    <p class="cart-price">Rp 219.000</p>
-                    <p class="cart-qty">Jumlah: 1</p>
-                </div>
-                <div class="cart-item-subtotal">
-                    <p>Rp 219.000</p>
-                </div>
-            </div>
-
-            <div class="cart-total">
-                <h3>Total Belanja: <span>Rp 902.000</span></h3>
-                <button class="cart-checkout-btn" onclick="window.location.href='checkout.html'">Checkout</button>
+                <button class="cart-btn-primary" onclick="window.location.href='checkout.html'">Lanjut ke Checkout</button>
+                <button class="cart-btn-secondary" onclick="window.location.href='index.html'">Lanjut Belanja</button>
             </div>
         </div>
     </main>
@@ -103,5 +60,6 @@
     <p>© 2026 Pinky Fashion Store - All Rights Reserved</p>
 </footer>
 
+    <script src="js/cart.js"></script>
 </body>
 </html>

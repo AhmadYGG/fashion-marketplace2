@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk Pria - Pinky Fashion Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
@@ -22,7 +25,7 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-        <a href="login.html">Login</a>
+         
     </div>
 </header>
 
@@ -32,7 +35,7 @@
 
 <div class="container">
     <aside class="sidebar">
-        <h3>Kategori</h3>
+        <h3>Kategori Fashion</h3>
         <ul>
             <li><a href="index.html">Produk Terbaru</a></li>
             <li><a href="pria.html">Fashion Pria</a></li>
@@ -49,6 +52,7 @@
                 var productPria = [];
                 var pricePria = [];
                 var imagePria = [];
+                var ratingPria = [];
                 
                 productPria[0] = "Men's Carlo Casual Top";
                 productPria[1] = "Lamont Men's Top";
@@ -113,12 +117,38 @@
                 imagePria[18] = "images/fashion-cowo/019.jpg";
                 imagePria[19] = "images/fashion-cowo/020.jpg";
                 
+                ratingPria[0] = 4.6;
+                ratingPria[1] = 4.4;
+                ratingPria[2] = 4.7;
+                ratingPria[3] = 4.5;
+                ratingPria[4] = 4.8;
+                ratingPria[5] = 4.3;
+                ratingPria[6] = 4.6;
+                ratingPria[7] = 4.9;
+                ratingPria[8] = 4.4;
+                ratingPria[9] = 4.7;
+                ratingPria[10] = 4.5;
+                ratingPria[11] = 4.6;
+                ratingPria[12] = 4.8;
+                ratingPria[13] = 4.3;
+                ratingPria[14] = 4.7;
+                ratingPria[15] = 4.5;
+                ratingPria[16] = 4.6;
+                ratingPria[17] = 4.4;
+                ratingPria[18] = 4.8;
+                ratingPria[19] = 4.7;
+                
                 for(var i = 0; i < 20; i++){
-                    document.write("<div class='product-card'>");
+                    document.write("<div class='product-card' onclick='window.location.href=\"detail-product.html?id=" + (i + 5) + "\"'>");
                     document.write("<img src='" + imagePria[i] + "' alt='" + productPria[i] + "'>");
                     document.write("<h3>" + productPria[i] + "</h3>");
-                    document.write("<p>Rp " + pricePria[i] + "</p>");
-                    document.write("<button onclick='window.location.href=\"keranjang.html\"'>Masukkan Keranjang</button>");
+                    document.write("<div class='product-footer'>");
+                    document.write("<p class='price'>Rp " + pricePria[i] + "</p>");
+                    document.write("<div class='rating'>");
+                    document.write("<span class='star'>★</span>");
+                    document.write("<span class='rating-number'>" + ratingPria[i] + "</span>");
+                    document.write("</div>");
+                    document.write("</div>");
                     document.write("</div>");
                 }
             </script>

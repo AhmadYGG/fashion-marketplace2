@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kebijakan Perusahaan - Pinky Fashion Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
@@ -20,7 +23,6 @@
         <a href="kebijakan.html">Kebijakan</a>
         <a href="keranjang.html">Keranjang</a>
         <a href="kontak.html">Kontak</a>
-        <a href="login.html">Login</a>
     </div>
 </header>
 
@@ -29,68 +31,177 @@
 </section>
 
 <div class="container">
-    <aside class="sidebar">
-        <h3>Kategori</h3>
-        <ul>
-            <li><a href="index.html">Produk Terbaru</a></li>
-            <li><a href="pria.html">Fashion Pria</a></li>
-            <li><a href="wanita.html">Fashion Wanita</a></li>
-            <li><a href="promo.html">Produk Promo</a></li>
-        </ul>
-    </aside>
+    <main class="content" style="max-width: 100%; margin-left: 0;">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>Kebijakan Perusahaan</h1>
+                <p>Panduan lengkap tentang kebijakan dan ketentuan Pinky Fashion Store</p>
+            </div>
 
-    <main class="content">
-        <h2>Kebijakan Perusahaan</h2>
-        
-        <h3>Kebijakan Privasi</h3>
-        <p>Pinky Fashion Store berkomitmen untuk melindungi privasi pelanggan. Data pribadi yang kami kumpulkan hanya digunakan untuk keperluan transaksi dan tidak akan dibagikan kepada pihak ketiga tanpa izin.</p>
-        
-        <h3>Kebijakan Pengembalian Barang</h3>
-        <p class="text-info">Barang dapat dikembalikan dalam waktu 7 hari setelah diterima dengan syarat:</p>
-        <ul>
-            <li>Barang masih dalam kondisi baru dan belum dipakai</li>
-            <li>Label dan tag masih terpasang</li>
-            <li>Menyertakan bukti pembelian</li>
-            <li>Tidak termasuk produk sale atau diskon khusus</li>
-        </ul>
+            <div class="policy-sections">
+                <div class="policy-section">
+                    <div class="section-header">
+                        <h2>Kebijakan Privasi</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Pinky Fashion Store berkomitmen untuk melindungi privasi dan keamanan data pribadi pelanggan. Kami memahami pentingnya kepercayaan dalam setiap transaksi bisnis.</p>
+                        <ul class="policy-list">
+                            <li>Data pribadi Anda hanya digunakan untuk keperluan transaksi dan pengiriman</li>
+                            <li>Informasi tidak akan dibagikan kepada pihak ketiga tanpa persetujuan Anda</li>
+                            <li>Kami menggunakan enkripsi untuk melindungi data sensitif</li>
+                            <li>Anda berhak mengakses, mengubah, atau menghapus data pribadi Anda</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <h3>Kebijakan Pengiriman</h3>
-        <table class="table">
-            <tr>
-                <th>Wilayah</th>
-                <th>Estimasi Waktu</th>
-                <th>Biaya</th>
-            </tr>
-            <tr class="success">
-                <td>Jawa Timur</td>
-                <td>1-2 hari</td>
-                <td>Rp 15.000</td>
-            </tr>
-            <tr class="info">
-                <td>Pulau Jawa</td>
-                <td>2-4 hari</td>
-                <td>Rp 25.000</td>
-            </tr>
-            <tr class="warning">
-                <td>Luar Jawa</td>
-                <td>4-7 hari</td>
-                <td>Rp 40.000</td>
-            </tr>
-        </table>
+                <div class="policy-section">
+                    <div class="section-header">
+                        <h2>Kebijakan Pengembalian Barang</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Kami ingin memastikan kepuasan Anda dengan setiap pembelian. Barang dapat dikembalikan dengan syarat dan ketentuan berikut:</p>
+                        <div class="return-conditions">
+                            <div class="condition-item">
+                                <h4>Waktu Pengembalian</h4>
+                                <p>Barang dapat dikembalikan dalam waktu <strong>7 hari</strong> setelah diterima</p>
+                            </div>
+                            <div class="condition-item">
+                                <h4>Kondisi Barang</h4>
+                                <p>Barang harus masih dalam kondisi baru, belum dipakai, dan tidak ada cacat</p>
+                            </div>
+                            <div class="condition-item">
+                                <h4>Kelengkapan</h4>
+                                <p>Label dan tag masih terpasang, serta menyertakan bukti pembelian</p>
+                            </div>
+                            <div class="condition-item">
+                                <h4>Pengecualian</h4>
+                                <p>Produk sale, diskon khusus, dan item custom tidak dapat dikembalikan</p>
+                            </div>
+                        </div>
+                        <p class="policy-note">Proses pengembalian akan diproses dalam 3-5 hari kerja setelah barang diterima</p>
+                    </div>
+                </div>
 
-        <h3>Kebijakan Pembayaran</h3>
-        <p>Kami menerima berbagai metode pembayaran:</p>
-        <ul>
-            <li>Transfer Bank (BCA, Mandiri, BNI, BRI)</li>
-            <li>E-Wallet (GoPay, OVO, Dana)</li>
-            <li>Kartu Kredit/Debit</li>
-            <li>Cash on Delivery (COD) untuk wilayah tertentu</li>
-        </ul>
-        
-        <p class="text-warning">Pembayaran harus dilakukan maksimal 24 jam setelah pemesanan, jika tidak pesanan akan otomatis dibatalkan.</p>
+                <div class="policy-section">
+                    <div class="section-header">
+                        <h2>Kebijakan Pengiriman</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Kami bekerja sama dengan berbagai kurir terpercaya untuk memastikan barang sampai dengan aman dan tepat waktu.</p>
+                        <div class="shipping-table-container">
+                            <table class="shipping-table">
+                                <thead>
+                                    <tr>
+                                        <th>Wilayah</th>
+                                        <th>Estimasi Waktu</th>
+                                        <th>Biaya Standar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jawa Timur</td>
+                                        <td>1-2 hari kerja</td>
+                                        <td>Rp 15.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pulau Jawa</td>
+                                        <td>2-4 hari kerja</td>
+                                        <td>Rp 25.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luar Jawa</td>
+                                        <td>4-7 hari kerja</td>
+                                        <td>Rp 40.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ul class="policy-list">
+                            <li>Gratis ongkir untuk pembelian minimal Rp 500.000</li>
+                            <li>Pengiriman dilakukan setiap hari kerja (Senin-Jumat)</li>
+                            <li>Tracking nomor akan diberikan setelah barang dikirim</li>
+                            <li>Asuransi pengiriman tersedia dengan biaya tambahan</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <h3>Syarat dan Ketentuan</h3>
-        <p>Dengan berbelanja di Pinky Fashion Store, pelanggan dianggap telah membaca dan menyetujui semua kebijakan yang berlaku.</p>
+                <div class="policy-section">
+                    <div class="section-header">
+                        <h2>Kebijakan Pembayaran</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Kami menyediakan berbagai metode pembayaran yang aman dan terpercaya untuk kemudahan Anda.</p>
+                        <div class="payment-methods-list">
+                            <div class="payment-method">
+                                <h4>Transfer Bank</h4>
+                                <p>Transfer langsung ke rekening BCA, Mandiri, BNI, atau BRI. Konfirmasi dalam 1-2 jam kerja.</p>
+                            </div>
+                            <div class="payment-method">
+                                <h4>QRIS</h4>
+                                <p>Pembayaran digital instan melalui scan kode QRIS. Proses otomatis dan aman.</p>
+                            </div>
+                            <div class="payment-method">
+                                <h4>Cash on Delivery (COD)</h4>
+                                <p>Bayar langsung saat barang tiba. Tersedia untuk area tertentu dengan biaya tambahan Rp 10.000.</p>
+                            </div>
+                        </div>
+                        <div class="payment-deadline">
+                            <p><strong>Batas Waktu Pembayaran:</strong> Pembayaran harus dilakukan maksimal <strong>24 jam</strong> setelah pemesanan. Jika tidak, pesanan akan otomatis dibatalkan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <div class="section-header">
+                        <h2>Kebijakan Garansi Produk</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Semua produk kami dijamin keaslian dan kualitasnya. Berikut adalah kebijakan garansi kami:</p>
+                        <ul class="policy-list">
+                            <li>Garansi keaslian produk 100% atau uang kembali</li>
+                            <li>Jika ada cacat produk, kami akan mengganti dengan produk baru</li>
+                            <li>Klaim garansi harus dilakukan dalam 7 hari setelah barang diterima</li>
+                            <li>Sertakan foto dan bukti pembelian saat melakukan klaim</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <div class="section-header">
+                        <h2>Syarat dan Ketentuan Umum</h2>
+                    </div>
+                    <div class="section-content">
+                        <ul class="policy-list">
+                            <li>Dengan berbelanja di Pinky Fashion Store, Anda dianggap telah membaca dan menyetujui semua kebijakan ini</li>
+                            <li>Kami berhak mengubah kebijakan kapan saja tanpa pemberitahuan sebelumnya</li>
+                            <li>Pelanggan bertanggung jawab atas keakuratan data yang diberikan</li>
+                            <li>Kami tidak bertanggung jawab atas kehilangan atau kerusakan barang yang disebabkan oleh kurir</li>
+                            <li>Semua transaksi bersifat final dan tidak dapat dibatalkan setelah pembayaran dikonfirmasi</li>
+                            <li>Kami berhak menolak pesanan yang mencurigakan atau melanggar kebijakan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <div class="section-header">
+                        <h2>Hubungi Kami</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Jika Anda memiliki pertanyaan atau keberatan tentang kebijakan kami, silakan hubungi tim customer service kami:</p>
+                        <div class="contact-info-box">
+                            <p><strong>WhatsApp:</strong> <a href="https://wa.me/6281217224413">0812-1722-4413</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:info@pinkyfashionstore.com">info@pinkyfashionstore.com</a></p>
+                            <p><strong>Jam Operasional:</strong> Senin - Jumat, 09:00 - 17:00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-footer">
+                <p>Terakhir diperbarui: Maret 2026</p>
+                <p>Kebijakan ini berlaku untuk semua transaksi di Pinky Fashion Store</p>
+            </div>
+        </div>
     </main>
 </div>
 
